@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kla-W0-OGE">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="AdX-Tl-piZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ljW-KJ-YAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController storyboardIdentifier="Tab Controller" definesPresentationContext="YES" id="kla-W0-OGE" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qLp-ey-pCq"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="L3k-jd-1KR">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="29V-Kc-dC3" kind="relationship" relationship="viewControllers" id="80H-5v-f1h"/>
+                        <segue destination="aoN-4r-q1q" kind="relationship" relationship="viewControllers" id="w7t-xM-kBr"/>
+                        <segue destination="iDs-DX-Lba" kind="relationship" relationship="viewControllers" id="5KC-S8-byM"/>
+                        <segue destination="LYM-Pz-Wk6" kind="relationship" relationship="viewControllers" id="WvP-aM-mey"/>
+                        <segue destination="T97-bb-a16" kind="relationship" relationship="viewControllers" id="R5x-nP-vq4"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-1700" y="348"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="or9-He-wF6">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mZd-S3-YRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="Tutorial Controller" definesPresentationContext="YES" id="Eoi-Yr-eQI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Gpd-Qc-91y">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4Cj-sO-PDy" kind="relationship" relationship="rootViewController" id="lEg-nF-0Gt"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1706" y="-1313"/>
+        </scene>
+        <!--View Controller - Welcome to Pocket Tracker-->
+        <scene sceneID="a90-7v-wXP">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DlC-2M-QUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="4Cj-sO-PDy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KpD-VO-vNV">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="CredAbility.png" id="n4p-nj-TI1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="157"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="xXU-Jh-GwF">
+                                <rect key="frame" x="20" y="140" width="280" height="207"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">CredAbility serves as a trusted financial advisor, helping people resolve financial challenges and build economic security for themselves and their families. CredAbility is committed to comprehensive, holistic counseling with programs designed to help clients assess their financial situation, set clear goals and achieve realistic action plans. To learn more about CredAbility visit our website at www.CredAbility.org or give us a call at 800.251.2227.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="YjA-yb-SKZ">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="WpQ-ku-J8u">
+                                        <connections>
+                                            <segue destination="Gu9-YW-7WE" kind="modal" id="pDE-KW-XrB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="J8t-M0-m9C"/>
+                                    <barButtonItem title="Next" style="done" id="VqF-T8-HIJ">
+                                        <connections>
+                                            <segue destination="j3j-Rd-88L" kind="push" id="oiC-86-HjZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome to Pocket Tracker" id="jGG-eO-27R"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1184" y="-1313"/>
+        </scene>
+        <!--View Controller - How to Start-->
+        <scene sceneID="vur-yU-8Mc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmL-PS-vbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="j3j-Rd-88L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gRB-nY-a9U">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="WelcomeScreen.tiff" id="HAx-OA-wWl">
+                                <rect key="frame" x="0.0" y="-32" width="320" height="222"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="KuS-Te-ac6">
+                                <rect key="frame" x="20" y="146" width="280" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">The CredAbility Pocket Tracker allows you to track your spending for a 30 day period to determine where your spending leaks currently reside. Each time you make a purchase, record the amount by selecting the appropriate category and enter the dollar amount spent. At the end of the tracking period, utilize the pie chart to quickly see where you are spending the most money. Did you spend more or less than you planned? Are there any spending habits you want to change? The pocket tracker is a simple tool that will help you analyze where your money is going and assist you in staying on track with your spending.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="IFo-2i-MbJ">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="76g-5t-zv2">
+                                        <connections>
+                                            <segue destination="Gu9-YW-7WE" kind="modal" id="cOY-3Y-Ook"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="fbY-ec-1SV"/>
+                                    <barButtonItem title="Next" style="done" id="wfc-Y7-ZXg">
+                                        <connections>
+                                            <segue destination="DYQ-1r-CaB" kind="push" id="Lzo-ks-rd3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="How to Start" id="ndj-JH-1Kq"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-703" y="-1313"/>
+        </scene>
+        <!--View Controller - Pocket Tracker Summary-->
+        <scene sceneID="quZ-1K-c1h">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jZl-D0-RWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="DYQ-1r-CaB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tuj-dZ-osD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="0yA-g5-Qmq">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="gEb-ME-PJH">
+                                        <connections>
+                                            <segue destination="Gu9-YW-7WE" kind="modal" id="kKL-9a-IOX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="k9U-ay-5e1"/>
+                                    <barButtonItem title="Next" style="done" id="pHQ-xP-yay">
+                                        <connections>
+                                            <segue destination="aPL-wi-K9K" kind="push" id="3Xo-qU-eJC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Summary.tiff" id="Qw9-sU-fsH">
+                                <rect key="frame" x="55" y="0.0" width="192" height="239"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="bhu-aH-am8">
+                                <rect key="frame" x="20" y="238" width="280" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">In the summary screen, your expenses are displayed through a progess bar and a pie chart. The red progress bar will extend as you make purchases throughout the 30 days. The pie chart provides a breakdown of much you are spending in each category.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pocket Tracker Summary" id="kCV-Ys-J2z"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-208" y="-1313"/>
+        </scene>
+        <!--View Controller - Viewing the Spending Plan-->
+        <scene sceneID="LXs-tr-enJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zve-R3-shE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="aPL-wi-K9K" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hvu-2Q-fG1">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gih-vp-p36">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="Brr-qW-N8V">
+                                        <connections>
+                                            <segue destination="Gu9-YW-7WE" kind="modal" id="5ns-e0-3eM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="oKd-AS-z6f"/>
+                                    <barButtonItem title="Next" style="done" id="9dh-W0-uQr">
+                                        <connections>
+                                            <segue destination="8h2-ZW-9bA" kind="push" id="hyi-Wd-7I7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Spending Plan.tiff" id="nSo-gb-aw6">
+                                <rect key="frame" x="54" y="20" width="213" height="207"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="BNr-lq-YKf">
+                                <rect key="frame" x="20" y="235" width="280" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">In the Spending Plan screen, you can view your Spending Plan for the 30 days. You can also view and make additions to your Spending Plan. Using the button in the top right corner, you can make additions to the Spending Plan. You can swipe the Spending Plan entires to delete them.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Viewing the Spending Plan" id="ojp-3f-8Xy"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="274" y="-1313"/>
+        </scene>
+        <!--View Controller - Adding Income-->
+        <scene sceneID="rVl-jo-ZuU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3K-Ms-tcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="8h2-ZW-9bA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WYj-SL-mMo">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="4zK-Yg-dC3">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="zFv-Lh-odn">
+                                        <connections>
+                                            <segue destination="Gu9-YW-7WE" kind="modal" id="VBL-iI-5Hp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="nhh-IJ-saQ"/>
+                                    <barButtonItem title="Next" style="done" id="CNe-l4-dcu">
+                                        <connections>
+                                            <segue destination="Lf0-bD-w3i" kind="push" id="Yws-Lo-Ft9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Add Income.tiff" id="8oY-nZ-wF8">
+                                <rect key="frame" x="40" y="20" width="241" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="7M0-S7-3Ab">
+                                <rect key="frame" x="20" y="221" width="280" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Once you access the Add Income screen from the Spending Plan screen, you can input the amount of the income and the date in which it was received. Click Done to add the income.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adding Income" id="6hi-fP-FBG"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="782" y="-1313"/>
+        </scene>
+        <!--View Controller - Adding an Expense-->
+        <scene sceneID="wfu-11-hdj">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L7r-2Z-9FI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Lf0-bD-w3i" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Amt-41-P4z">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ypY-F5-Zzg">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="PuG-Cb-YaG">
+                                        <connections>
+                                            <segue destination="Gu9-YW-7WE" kind="modal" id="Lpl-N5-Hc0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="bHG-Bd-Pih"/>
+                                    <barButtonItem title="Next" style="done" id="SvJ-UU-PcC">
+                                        <connections>
+                                            <segue destination="AMf-A5-l68" kind="push" id="gxx-Aw-m0O"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AddExpense.tiff" id="XHq-FX-RRE">
+                                <rect key="frame" x="0.0" y="10" width="320" height="189"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="nxL-g0-fl3">
+                                <rect key="frame" x="20" y="207" width="280" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">The add expense view can be accessed by selecting the "Add Expense" tab. To add an expense, you will need to enter the category, the date, the amount, and the method of payment for the expense.
+</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="There are several categories to choose from: " id="fAZ-Oz-cru">
+                                <rect key="frame" x="20" y="277" width="280" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mss-AP-v9X">
+                                <rect key="frame" x="20" y="306" width="280" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Grocery, Dining Out, Auto: Gas and Maintenance, Medical, Children, Education, Clothing, Personal Items, Fun, Entertainment, Savings, Miscellaneous, and Other 1.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adding an Expense" id="1YC-O2-cPQ"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1278" y="-1313"/>
+        </scene>
+        <!--View Controller - Viewing Expenses-->
+        <scene sceneID="1O1-oG-Cf1">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amg-EN-tqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="AMf-A5-l68" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vUE-AZ-bdx">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Expenses.tiff" id="Z6g-3a-yOI">
+                                <rect key="frame" x="0.0" y="20" width="320" height="236"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="BPj-8V-rR6">
+                                <rect key="frame" x="20" y="264" width="285" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Your expenses can be viewed by selecting the "Expenses" tab. In this view, you can filter the expenses by their category and method of payment. This view also gives you the ability to view your spending plan and see the remaining balance.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="4Lc-OY-1y7">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="NtY-ye-cuI">
+                                        <connections>
+                                            <segue destination="Gu9-YW-7WE" kind="modal" id="ql8-D9-P3F"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="h1C-zD-e3f"/>
+                                    <barButtonItem title="Next" style="done" id="tSa-Re-QZL">
+                                        <connections>
+                                            <segue destination="Gdc-ZX-6vc" kind="push" id="JTQ-qr-7ma"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Viewing Expenses" id="PWd-Ut-fgR"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1749" y="-1313"/>
+        </scene>
+        <!--View Controller - Settings-->
+        <scene sceneID="33S-FP-EO2">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XSW-8D-mCl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Gdc-ZX-6vc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wey-Tr-7in">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Cxx-xY-dq9">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="6gw-NT-BEz">
+                                        <connections>
+                                            <segue destination="Gu9-YW-7WE" kind="modal" id="vh2-IX-NFR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="152" style="plain" systemItem="fixedSpace" id="2Di-NE-O9Q"/>
+                                    <barButtonItem title="Begin" style="done" id="z8E-Hu-BQZ"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Settings.tiff" id="Xoe-tR-D0V">
+                                <rect key="frame" x="43" y="20" width="235" height="182"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="zAA-OS-wwf">
+                                <rect key="frame" x="20" y="222" width="280" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">From the Settings screen, you can access this tutorial. Also, you can clear all of your data from the this session. You will then be prompted with the Welcome Screen to enter a new initial Spending Plan and start date.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="3Eh-nb-OIU"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2202" y="-1313"/>
+        </scene>
+        <!--Initial View Controller-->
+        <scene sceneID="Fcc-2u-YnC">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GeT-8t-925" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Initial View" id="Gu9-YW-7WE" customClass="InitialViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vh4-MX-VRk">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="CredAbility.png" id="myj-e2-DSS">
+                                <rect key="frame" x="20" y="44" width="280" height="146"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" id="X8N-2M-Nre">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Welcome to Pocket Tracker" id="Z0x-EA-DjB"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8L3-Pb-lyK">
+                                <rect key="frame" x="20" y="198" width="280" height="196"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="mrl-hT-lsh">
+                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem width="231" style="plain" systemItem="fixedSpace" id="KnT-gE-ZT3"/>
+                                    <barButtonItem title="Continue" style="done" id="pyB-2L-gt6">
+                                        <connections>
+                                            <action selector="doContinue" destination="Gu9-YW-7WE" id="Zh2-KB-Okd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="pyB-2L-gt6" id="8LB-3V-QHW"/>
+                        <outlet property="tView" destination="8L3-Pb-lyK" id="cRy-v3-gxA"/>
+                        <outlet property="view" destination="vh4-MX-VRk" id="dH9-u3-cMh"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1706" y="-263"/>
+        </scene>
+        <!--Add Expense View Controller - Add Expense-->
+        <scene sceneID="IOB-PT-t0s">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qmB-dr-oxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Add Expense Controller" id="iDs-DX-Lba" customClass="AddExpenseViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GxB-GJ-9xi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gU0-vp-RmF">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Add Expense Cell" textLabel="YEy-L7-h9N" detailTextLabel="S6k-sw-Z04" style="IBUITableViewCellStyleValue1" id="IVf-X9-dN0">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YEy-L7-h9N">
+                                                    <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S6k-sw-Z04">
+                                                    <rect key="frame" x="226" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="bXY-A3-1EJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Expense" id="Uib-Ov-cJu">
+                                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="lfI-ls-jvK">
+                                            <connections>
+                                                <action selector="doDoneButton" destination="iDs-DX-Lba" id="yNx-Ey-Etz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Add Expense" id="DP1-E0-yXG"/>
+                    <connections>
+                        <outlet property="doneAddExpense" destination="lfI-ls-jvK" id="OKs-kw-MQm"/>
+                        <outlet property="tableView" destination="gU0-vp-RmF" id="P0Z-8S-CU7"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1170" y="0.0"/>
+        </scene>
+        <!--Edit Expense View Controller-->
+        <scene sceneID="cPz-Gx-rg4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UT3-P6-HtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Edit Expense Controller" id="fcn-CM-pc6" customClass="EditExpenseViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eyP-5C-qdr">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="4mX-HO-M0b">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Edit Expense Cell" textLabel="JJ5-ft-Ghz" detailTextLabel="j4t-UG-EJn" style="IBUITableViewCellStyleValue1" id="n95-Hs-kLd">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JJ5-ft-Ghz">
+                                                    <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j4t-UG-EJn">
+                                                    <rect key="frame" x="226" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="aJc-x9-NYT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Edit Expense" id="1lg-xo-Fbf">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ju8-X5-Izl">
+                                            <connections>
+                                                <action selector="doCancelButton" destination="fcn-CM-pc6" id="ssk-eb-Bgb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="Oek-iW-bn3">
+                                            <connections>
+                                                <action selector="doDoneButton" destination="fcn-CM-pc6" id="d7v-aU-XgE"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="ju8-X5-Izl" id="bHB-Jg-jft"/>
+                        <outlet property="doneAddExpense" destination="Oek-iW-bn3" id="7cY-dM-nul"/>
+                        <outlet property="tableView" destination="4mX-HO-M0b" id="Ytq-gI-9ed"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-694" y="618"/>
+        </scene>
+        <!--Summary View Controller - Summary-->
+        <scene sceneID="woW-sW-2DQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdD-om-l9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="29V-Kc-dC3" customClass="SummaryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XXM-pB-2we">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Summary" id="6UV-vH-m8z"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-694" y="-561"/>
+        </scene>
+        <!--Expenses View Controller - Expenses-->
+        <scene sceneID="grV-de-XiG">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOc-uW-knx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Expense Controller" id="LYM-Pz-Wk6" customClass="ExpensesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J9l-wC-Xyw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="XI8-Cz-LiB">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Category Cell" textLabel="CfP-N9-p7n" style="IBUITableViewCellStyleDefault" id="GGv-gU-mRt">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CfP-N9-p7n">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Expense Cell" textLabel="pJK-eZ-naq" detailTextLabel="bGz-NT-vdt" style="IBUITableViewCellStyleValue1" id="wkF-Lw-fFc">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pJK-eZ-naq">
+                                                    <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bGz-NT-vdt">
+                                                    <rect key="frame" x="246" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="MSC-so-zBX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Expenses" id="Y2I-a4-b1W"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Expenses" id="VpE-Lc-AZ3"/>
+                    <navigationItem key="navigationItem" id="zOo-rB-ntZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="XI8-Cz-LiB" id="eEf-Ox-ijP"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1170" y="618"/>
+        </scene>
+        <!--Spending Plan View Controller - Spending Plan-->
+        <scene sceneID="gZZ-4i-o5H">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V84-QC-0e3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="aoN-4r-q1q" customClass="SpendingPlanViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CEV-wA-mj6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ptk-lh-rid">
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Total Cell" textLabel="k7L-gA-sK3" detailTextLabel="XqH-o5-JPJ" style="IBUITableViewCellStyleValue1" id="pnx-jS-Znr">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k7L-gA-sK3">
+                                                    <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XqH-o5-JPJ">
+                                                    <rect key="frame" x="246" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Spending Plan Entry Cell" textLabel="eMA-zc-RQo" detailTextLabel="5UI-KT-ydS" style="IBUITableViewCellStyleValue1" id="xsT-PS-xBM">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eMA-zc-RQo">
+                                                    <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5UI-KT-ydS">
+                                                    <rect key="frame" x="246" y="11" width="44" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="nEe-TK-qiT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Spending Plan" id="g21-4P-9Sa">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f87-FR-ZUH">
+                                            <connections>
+                                                <segue destination="5ic-4f-tvb" kind="modal" id="CeM-84-dci"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Spending Plan" id="lsk-wb-txc"/>
+                    <connections>
+                        <outlet property="tableView" destination="ptk-lh-rid" id="ewe-NK-BCu"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1203" y="1212"/>
+        </scene>
+        <!--Add Income View Controller-->
+        <scene sceneID="TZb-sM-f2k">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hbf-yk-8Jv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="5ic-4f-tvb" customClass="AddIncomeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uRY-lp-jUy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eev-4t-jqQ">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Spending Plan Add Amount" id="3PJ-cP-8RT">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Spending Amount Add Date" id="pfB-3b-udZ">
+                                        <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="mbW-Uy-prM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Income" id="8Qk-if-JD4">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HeV-Ww-SUe">
+                                            <connections>
+                                                <action selector="cancelButton" destination="5ic-4f-tvb" id="W4l-nk-MxC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="fip-jW-Dde">
+                                            <connections>
+                                                <action selector="doneButton" destination="5ic-4f-tvb" id="5db-KS-DoM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="HeV-Ww-SUe" id="lOO-5R-rVt"/>
+                        <outlet property="doneAddIncome" destination="fip-jW-Dde" id="wMB-Ac-vxs"/>
+                        <outlet property="tableView" destination="eev-4t-jqQ" id="m3F-Qb-Wv1"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-694" y="1219"/>
+        </scene>
+        <!--Settings View Controller - Settings-->
+        <scene sceneID="s6O-vi-yFN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fId-Dr-bdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="4Kp-Rh-cvV" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="5Mh-Ur-Bnl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="eDl-VH-rCi">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="wco-dg-0OR" style="IBUITableViewCellStyleDefault" id="x1J-QK-1Me">
+                                        <rect key="frame" x="0.0" y="10" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="View Tutorial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wco-dg-0OR">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="8tH-Kf-VPH" kind="push" id="Cji-TO-HXd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="1Q8-h1-OY9">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="uzs-EC-TBB" style="IBUITableViewCellStyleDefault" id="eNR-h9-vL0">
+                                        <rect key="frame" x="0.0" y="76" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Reset Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uzs-EC-TBB">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="SK6-gA-Q9c">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="qgT-vm-TPl" style="IBUITableViewCellStyleDefault" id="QNr-lr-TWs">
+                                        <rect key="frame" x="0.0" y="142" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="E-Mail Current Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qgT-vm-TPl">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="8cf-Ii-6GU">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="iSL-lD-vly" style="IBUITableViewCellStyleDefault" id="Ruo-dA-Kyb">
+                                        <rect key="frame" x="0.0" y="208" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Custom Categories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iSL-lD-vly">
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <segue destination="RjA-rg-xW3" kind="push" id="ysb-kp-dIV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="eVw-dB-Apa"/>
+                    <navigationItem key="navigationItem" title="Settings" id="lnT-4Y-d4S"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-1133" y="1786"/>
+        </scene>
+        <!--Navigation Controller - Settings-->
+        <scene sceneID="YQF-p1-67K">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiP-Xm-y6a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="T97-bb-a16" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="PxA-Iv-GEb"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="sAp-Cv-JAi">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qQS-SM-8HD">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="4Kp-Rh-cvV" kind="relationship" relationship="rootViewController" id="koE-Gf-Ssz"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1737" y="1786"/>
+        </scene>
+        <!--View Controller - How to Start-->
+        <scene sceneID="jXv-7x-yJR">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dn3-Ws-lvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="8tH-Kf-VPH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hRR-6L-Zm4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="g2o-xA-q8e">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="DGh-la-ryS">
+                                        <connections>
+                                            <segue destination="kla-W0-OGE" kind="modal" id="qdE-Ag-Mkr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="EU8-hg-fa9"/>
+                                    <barButtonItem title="Next" style="done" id="fQi-2K-5Ja">
+                                        <connections>
+                                            <segue destination="sIP-3R-qud" kind="push" id="IKL-By-u4h"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="9kX-IE-B58">
+                                <rect key="frame" x="20" y="144" width="280" height="223"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">The CredAbility Pocket Tracker allows you to track your spending for a 30 day period to determine where your spending leaks currently reside. Each time you make a purchase, record the amount by selecting the appropriate category and enter the dollar amount spent. At the end of the tracking period, utilize the pie chart to quickly see where you are spending the most money. Did you spend more or less than you planned? Are there any spending habits you want to change? The pocket tracker is a simple tool that will help you analyze where your money is going and assist you in staying on track with your spending.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="Welcome.tiff" id="AGZ-E5-vQU">
+                                <rect key="frame" x="0.0" y="-30" width="320" height="222"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="How to Start" id="Lz1-xp-Wtl"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-294" y="1786"/>
+        </scene>
+        <!--View Controller - Pocket Tracker Summary-->
+        <scene sceneID="0g5-6W-d4A">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RZ1-hM-yib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="sIP-3R-qud" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LfV-Ul-f29">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="35t-Pb-2wT">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="dOc-Ay-nmM">
+                                        <connections>
+                                            <segue destination="kla-W0-OGE" kind="modal" id="sDE-LO-za4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="ShI-m3-raP"/>
+                                    <barButtonItem title="Next" style="done" id="1sw-q5-gMo">
+                                        <connections>
+                                            <segue destination="mTH-19-xPf" kind="push" id="y07-Is-uUI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Summary.tiff" id="3tH-ry-Epo">
+                                <rect key="frame" x="64" y="0.0" width="192" height="239"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="FlT-JH-psm">
+                                <rect key="frame" x="20" y="238" width="280" height="134"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">In the summary screen, your expenses are displayed through a progess bar and a pie chart. The red progress bar will extend as you make purchases throughout the 30 days. The pie chart provides a breakdown of much you are spending in each category.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pocket Tracker Summary" id="ZpP-p1-DIZ"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="98" y="1786"/>
+        </scene>
+        <!--View Controller - View the Spending Plan-->
+        <scene sceneID="Dk8-PF-zgz">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Weg-4J-dIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="mTH-19-xPf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ds-OE-tPE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="49W-6g-aTd">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="o1Q-w6-RpO">
+                                        <connections>
+                                            <segue destination="kla-W0-OGE" kind="modal" id="Niu-KU-uds"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="APb-LL-HoU"/>
+                                    <barButtonItem title="Next" style="done" id="h6f-rg-KEi">
+                                        <connections>
+                                            <segue destination="IB5-8B-ZFz" kind="push" id="qX7-MM-CE1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Spending Plan.tiff" id="C4i-LY-2Jw">
+                                <rect key="frame" x="54" y="25" width="213" height="207"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="TVT-Of-TSb">
+                                <rect key="frame" x="25" y="240" width="280" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">In the Spending Plan screen, you can view your Spending Plan for the 30 days. You can also view and make additions to your Spending Plan. Using the button in the top right corner, you can make additions to the Spending Plan. You can swipe the Spending Plan entires to delete them.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="View the Spending Plan" id="HOt-GC-USw"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="510" y="1786"/>
+        </scene>
+        <!--View Controller - Adding Income-->
+        <scene sceneID="UQG-OK-cbq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wo9-VZ-txG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="IB5-8B-ZFz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ko-AD-z2H">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cRB-Lz-gSa">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="b9m-jR-eGX">
+                                        <connections>
+                                            <segue destination="kla-W0-OGE" kind="modal" id="Vp9-dB-Fq0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="9f7-s4-Ob4"/>
+                                    <barButtonItem title="Next" style="done" id="2fs-IR-Igg">
+                                        <connections>
+                                            <segue destination="Bh8-ht-Kwy" kind="push" id="qf9-w3-jvd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Add Income.tiff" id="aKJ-K4-AtS">
+                                <rect key="frame" x="40" y="20" width="241" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="L5p-BE-rVX">
+                                <rect key="frame" x="20" y="215" width="280" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Once you access the Add Income screen from the Spending Plan screen, you can input the amount of the income and the date in which it was received. Click Done to add the income.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adding Income" id="Gcr-KX-ATP"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="924" y="1786"/>
+        </scene>
+        <!--View Controller - Adding an Expense-->
+        <scene sceneID="TLR-0F-Ic1">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wPM-do-Pwl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Bh8-ht-Kwy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="faG-ew-18m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="kvk-jE-CUo">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="KDa-1F-G14">
+                                        <connections>
+                                            <segue destination="kla-W0-OGE" kind="modal" id="SEg-cq-6Yw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="dEg-me-F5e"/>
+                                    <barButtonItem title="Next" style="done" id="mZy-M4-1vP">
+                                        <connections>
+                                            <segue destination="qXo-7F-SzA" kind="push" id="riN-qB-VId"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AddExpense.tiff" id="saN-rT-BwM">
+                                <rect key="frame" x="0.0" y="7" width="320" height="189"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="nQT-9g-JQu">
+                                <rect key="frame" x="20" y="204" width="280" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">The add expense view can be accessed by selecting the "Add Expense" tab. To add an expense, you will need to enter the category, the date, the amount, and the method of payment for the expense.
+</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="ndg-jD-yXW">
+                                <rect key="frame" x="20" y="293" width="280" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">There are 8 categories to choose from: Grocery, Dining Out, Auto: Gas and Maintenance, Medical, Children, Education, Clothing, Personal Items, Fun, Entertainment, Miscellaneous, and 2 "Other" categories.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="There are several categories to choose from: " id="5wW-gq-Sce">
+                                <rect key="frame" x="20" y="269" width="244" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adding an Expense" id="8xQ-su-UEY"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1342" y="1786"/>
+        </scene>
+        <!--View Controller - Viewing Expenses-->
+        <scene sceneID="8VT-Ls-gbM">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a3x-Mg-VFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="qXo-7F-SzA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PgB-aQ-bLU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1qk-Iy-IZ8">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Skip Tutorial" id="kpJ-OS-Dnr">
+                                        <connections>
+                                            <segue destination="kla-W0-OGE" kind="modal" id="J6e-72-5EO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="160" style="plain" systemItem="fixedSpace" id="pyR-H3-olJ"/>
+                                    <barButtonItem title="Next" style="done" id="PRJ-Ob-xGQ">
+                                        <connections>
+                                            <segue destination="XTP-tX-3fp" kind="push" id="XkO-U5-u2e"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Expenses.tiff" id="gMR-rP-neF">
+                                <rect key="frame" x="0.0" y="20" width="320" height="236"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="zhs-aA-Pas">
+                                <rect key="frame" x="18" y="264" width="285" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Your expenses can be viewed by selecting the "Expenses" tab. In this view, you can filter the expenses by their category and method of payment. This view also gives you the ability to view your spending plan and see the remaining balance.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Viewing Expenses" id="9kV-U6-OkO"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1770" y="1786"/>
+        </scene>
+        <!--View Controller - Settings-->
+        <scene sceneID="kbp-Un-GGn">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDK-XM-Pi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="XTP-tX-3fp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mk3-X7-bBR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qgW-s0-3PQ">
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem width="255" style="plain" systemItem="fixedSpace" id="3EM-ll-h1A"/>
+                                    <barButtonItem title="Exit" style="done" id="x7C-FB-KZJ">
+                                        <connections>
+                                            <segue destination="kla-W0-OGE" kind="modal" id="hBz-bW-CtG"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Settings.tiff" id="onR-B2-Zio">
+                                <rect key="frame" x="43" y="20" width="235" height="182"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Yts-Le-hgo">
+                                <rect key="frame" x="20" y="228" width="280" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">From the Settings screen, you can access this tutorial. Also, you can clear all of your data from the this session. You will then be prompted with the Welcome Screen to enter a new initial Spending Plan and start date.</string>
+                                <color key="textColor" red="0.21960784310000001" green="0.3294117647" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="tWe-YW-zpd"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2180" y="1786"/>
+        </scene>
+        <!--Custom Categories View Controller - Custom Categories-->
+        <scene sceneID="Mpp-sU-MTL">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fby-Hs-VtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="RjA-rg-xW3" customClass="CustomCategoriesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="36o-ph-eOS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Custom Category Cell" textLabel="gCa-ho-3Ze" style="IBUITableViewCellStyleDefault" id="Ag4-kn-6Zc">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gCa-ho-3Ze">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RjA-rg-xW3" id="WEz-uB-dAn"/>
+                            <outlet property="delegate" destination="RjA-rg-xW3" id="vyV-Cb-7iO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Custom Categories" id="Bg0-hZ-z07">
+                        <barButtonItem key="backBarButtonItem" title="Settings" id="1w6-P1-oCs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYP-9l-lL1">
+                            <connections>
+                                <action selector="addCategory:" destination="RjA-rg-xW3" id="e6K-VY-325"/>
+                                <segue destination="YmI-jI-UfD" kind="modal" id="7RI-NV-VP0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addCategoryButton" destination="qYP-9l-lL1" id="Axo-xJ-d1j"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-294" y="2367"/>
+        </scene>
+        <!--Add Category View Controller-->
+        <scene sceneID="fq1-8N-srf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caC-E9-bRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="YmI-jI-UfD" customClass="AddCategoryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qwk-Gt-eRs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="a8E-sr-fwN">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Add Category Cell" id="LkO-O1-PR7">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" id="ztU-JP-feG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Category" id="Kua-yV-Tpe">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9M4-VM-nQD">
+                                            <connections>
+                                                <action selector="doCancelButton:" destination="YmI-jI-UfD" id="4RV-wX-A2A"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="yA5-j3-5De">
+                                            <connections>
+                                                <action selector="doDoneButton:" destination="YmI-jI-UfD" id="RAe-QB-NFK"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="9M4-VM-nQD" id="oCQ-aE-2jw"/>
+                        <outlet property="doneButton" destination="yA5-j3-5De" id="NrE-Wr-9e6"/>
+                        <outlet property="tView" destination="a8E-sr-fwN" id="wSC-VD-IsB"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="98" y="2367"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Add Income.tiff" width="318" height="197"/>
+        <image name="AddExpense.tiff" width="316" height="248"/>
+        <image name="CredAbility.png" width="251" height="80"/>
+        <image name="Expenses.tiff" width="318" height="406"/>
+        <image name="Settings.tiff" width="317" height="196"/>
+        <image name="Spending Plan.tiff" width="316" height="266"/>
+        <image name="Summary.tiff" width="319" height="406"/>
+        <image name="Welcome.tiff" width="315" height="136"/>
+        <image name="WelcomeScreen.tiff" width="303" height="134"/>
+    </resources>
+    <classes>
+        <class className="AddCategoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCategoryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doCancelButton:"/>
+                <relationship kind="action" name="doDoneButton:"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="AddExpenseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddExpenseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doDoneButton"/>
+                <relationship kind="outlet" name="doneAddExpense" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="AddIncomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddIncomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButton"/>
+                <relationship kind="action" name="doneButton"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneAddIncome" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CustomCategoriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCategoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addCategory:"/>
+                <relationship kind="action" name="editCategories:"/>
+                <relationship kind="outlet" name="addCategoryButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editCategoriesButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="EditExpenseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditExpenseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doCancelButton"/>
+                <relationship kind="action" name="doDoneButton"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneAddExpense" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ExpensesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpensesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="InitialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doContinue"/>
+                <relationship kind="outlet" name="continueButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+        </class>
+        <class className="SpendingPlanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpendingPlanViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SummaryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="ql8-D9-P3F"/>
+    </inferredMetricsTieBreakers>
+</document>
