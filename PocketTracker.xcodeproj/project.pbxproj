@@ -29,13 +29,13 @@
 		2EB9B1AA157890B4009E3C32 /* AddExpense.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A4157890B4009E3C32 /* AddExpense.tiff */; };
 		2EB9B1AB157890B4009E3C32 /* Expenses.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A5157890B4009E3C32 /* Expenses.tiff */; };
 		2EB9B1AC157890B4009E3C32 /* Settings.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A6157890B4009E3C32 /* Settings.tiff */; };
-		2EB9B1AD157890B4009E3C32 /* Spending Plan.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A7157890B4009E3C32 /* Spending Plan.tiff */; };
+		2EB9B1AD157890B4009E3C32 /* SpendingPlan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A7157890B4009E3C32 /* SpendingPlan.jpg */; };
 		2EB9B1AE157890B4009E3C32 /* Summary.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A8157890B4009E3C32 /* Summary.tiff */; };
 		2EB9B1B01578E0E2009E3C32 /* Welcome.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1AF1578E0E2009E3C32 /* Welcome.tiff */; };
 		2EBE1B7F159262B1006A2900 /* CustomCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE1B7E159262B1006A2900 /* CustomCategoriesViewController.m */; };
 		2EBE1B82159263F3006A2900 /* CustomCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE1B81159263F3006A2900 /* CustomCategories.m */; };
 		2EC3706F159381720098AB43 /* AddCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC3706E159381720098AB43 /* AddCategoryViewController.m */; };
-		2EC594FE15635A3A00C1E5ED /* WelcomeScreen.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EC594FD15635A3A00C1E5ED /* WelcomeScreen.tiff */; };
+		2EC594FE15635A3A00C1E5ED /* Welcome.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EC594FD15635A3A00C1E5ED /* Welcome.tiff */; };
 		2ED58CB4154E100B00FBBEB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED58CB3154E100B00FBBEB7 /* UIKit.framework */; };
 		2ED58CB6154E100B00FBBEB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED58CB5154E100B00FBBEB7 /* Foundation.framework */; };
 		2ED58CB8154E100B00FBBEB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED58CB7154E100B00FBBEB7 /* CoreGraphics.framework */; };
@@ -69,8 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E12E202156F363C0087EFC6 /* Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Retina.png; path = ../../../Downloads/Retina.png; sourceTree = "<group>"; };
-		2E12E204156F36E20087EFC6 /* Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Normal.png; path = ../../../Downloads/Normal.png; sourceTree = "<group>"; };
+		2E12E202156F363C0087EFC6 /* Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Retina.png; sourceTree = "<group>"; };
+		2E12E204156F36E20087EFC6 /* Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Normal.png; sourceTree = "<group>"; };
 		2E12E206156F36FC0087EFC6 /* Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Normal.png; sourceTree = "<group>"; };
 		2E12E208156F37120087EFC6 /* Retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Retina.png; sourceTree = "<group>"; };
 		2E813B36156F1C7100BFB517 /* SpendingPlan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpendingPlan.h; sourceTree = "<group>"; };
@@ -97,20 +97,20 @@
 		2EB93A26156409FD0058579A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2EB93A2815640AC20058579A /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		2EB93A2915640AC20058579A /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
-		2EB9B1A3157890B4009E3C32 /* Add Income.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Add Income.tiff"; path = "../../../Pictures/Screenshots 2/Tutorial Screenshots/Add Income.tiff"; sourceTree = "<group>"; };
-		2EB9B1A4157890B4009E3C32 /* AddExpense.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = AddExpense.tiff; path = "../../../Pictures/Screenshots 2/Tutorial Screenshots/AddExpense.tiff"; sourceTree = "<group>"; };
-		2EB9B1A5157890B4009E3C32 /* Expenses.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Expenses.tiff; path = "../../../Pictures/Screenshots 2/Tutorial Screenshots/Expenses.tiff"; sourceTree = "<group>"; };
-		2EB9B1A6157890B4009E3C32 /* Settings.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Settings.tiff; path = "../../../Pictures/Screenshots 2/Tutorial Screenshots/Settings.tiff"; sourceTree = "<group>"; };
-		2EB9B1A7157890B4009E3C32 /* Spending Plan.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = "Spending Plan.tiff"; path = "../../../Pictures/Screenshots 2/Tutorial Screenshots/Spending Plan.tiff"; sourceTree = "<group>"; };
-		2EB9B1A8157890B4009E3C32 /* Summary.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Summary.tiff; path = "../../../Pictures/Screenshots 2/Tutorial Screenshots/Summary.tiff"; sourceTree = "<group>"; };
-		2EB9B1AF1578E0E2009E3C32 /* Welcome.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = Welcome.tiff; path = "../../../Pictures/Screenshots 2/Tutorial Screenshots/Welcome.tiff"; sourceTree = "<group>"; };
+		2EB9B1A3157890B4009E3C32 /* Add Income.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "Add Income.tiff"; sourceTree = "<group>"; };
+		2EB9B1A4157890B4009E3C32 /* AddExpense.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = AddExpense.tiff; sourceTree = "<group>"; };
+		2EB9B1A5157890B4009E3C32 /* Expenses.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Expenses.tiff; sourceTree = "<group>"; };
+		2EB9B1A6157890B4009E3C32 /* Settings.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Settings.tiff; sourceTree = "<group>"; };
+		2EB9B1A7157890B4009E3C32 /* SpendingPlan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpendingPlan.jpg; sourceTree = "<group>"; };
+		2EB9B1A8157890B4009E3C32 /* Summary.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Summary.tiff; sourceTree = "<group>"; };
+		2EB9B1AF1578E0E2009E3C32 /* Welcome.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Welcome.tiff; sourceTree = "<group>"; };
 		2EBE1B7D159262B1006A2900 /* CustomCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCategoriesViewController.h; sourceTree = "<group>"; };
 		2EBE1B7E159262B1006A2900 /* CustomCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCategoriesViewController.m; sourceTree = "<group>"; };
 		2EBE1B80159263F3006A2900 /* CustomCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCategories.h; sourceTree = "<group>"; };
 		2EBE1B81159263F3006A2900 /* CustomCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCategories.m; sourceTree = "<group>"; };
 		2EC3706D159381720098AB43 /* AddCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryViewController.h; sourceTree = "<group>"; };
 		2EC3706E159381720098AB43 /* AddCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryViewController.m; sourceTree = "<group>"; };
-		2EC594FD15635A3A00C1E5ED /* WelcomeScreen.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; name = WelcomeScreen.tiff; path = ../../../Pictures/WelcomeScreen.tiff; sourceTree = "<group>"; };
+		2EC594FD15635A3A00C1E5ED /* Welcome.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = Welcome.tiff; sourceTree = "<group>"; };
 		2ED58CAF154E100B00FBBEB7 /* PocketTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED58CB3154E100B00FBBEB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2ED58CB5154E100B00FBBEB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,10 +126,10 @@
 		2ED58CD1154E10BF00FBBEB7 /* AddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExpenseViewController.m; sourceTree = "<group>"; };
 		2ED58CD3154E10D400FBBEB7 /* ExpensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpensesViewController.h; sourceTree = "<group>"; };
 		2ED58CD4154E10D400FBBEB7 /* ExpensesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpensesViewController.m; sourceTree = "<group>"; };
-		2EF7B76B1578520E00FAAF59 /* Expenses.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Expenses.jpg; path = "../../../Pictures/E-Mail Pictures/Expenses.jpg"; sourceTree = "<group>"; };
-		2EF7B76D1578521E00FAAF59 /* SpendingPlan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = SpendingPlan.jpg; path = "../../../Pictures/E-Mail Pictures/SpendingPlan.jpg"; sourceTree = "<group>"; };
-		2EF7B76F1578536900FAAF59 /* CA_tag_4c.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CA_tag_4c.jpg; path = "../../../Pictures/E-Mail Pictures/CA_tag_4c.jpg"; sourceTree = "<group>"; };
-		2EF7B771157858D100FAAF59 /* AtAGlance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AtAGlance.png; path = "../../../Pictures/E-Mail Pictures/AtAGlance.png"; sourceTree = "<group>"; };
+		2EF7B76B1578520E00FAAF59 /* Expenses.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Expenses.jpg; sourceTree = "<group>"; };
+		2EF7B76D1578521E00FAAF59 /* SpendingPlan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SpendingPlan.jpg; sourceTree = "<group>"; };
+		2EF7B76F1578536900FAAF59 /* CA_tag_4c.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CA_tag_4c.jpg; sourceTree = "<group>"; };
+		2EF7B771157858D100FAAF59 /* AtAGlance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AtAGlance.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,9 +245,9 @@
 				2EB9B1A4157890B4009E3C32 /* AddExpense.tiff */,
 				2EB9B1A5157890B4009E3C32 /* Expenses.tiff */,
 				2EB9B1A6157890B4009E3C32 /* Settings.tiff */,
-				2EB9B1A7157890B4009E3C32 /* Spending Plan.tiff */,
+				2EB9B1A7157890B4009E3C32 /* SpendingPlan.jpg */,
 				2EB9B1A8157890B4009E3C32 /* Summary.tiff */,
-				2EC594FD15635A3A00C1E5ED /* WelcomeScreen.tiff */,
+				2EC594FD15635A3A00C1E5ED /* Welcome.tiff */,
 				2EAF787615618CFB008B304C /* CredAbility.png */,
 				2ED58CBB154E100B00FBBEB7 /* PocketTracker-Info.plist */,
 				2ED58CBC154E100B00FBBEB7 /* InfoPlist.strings */,
@@ -328,7 +328,7 @@
 				2ED58CBE154E100B00FBBEB7 /* InfoPlist.strings in Resources */,
 				2ED58CC7154E100B00FBBEB7 /* MainStoryboard.storyboard in Resources */,
 				2EAF787715618CFB008B304C /* CredAbility.png in Resources */,
-				2EC594FE15635A3A00C1E5ED /* WelcomeScreen.tiff in Resources */,
+				2EC594FE15635A3A00C1E5ED /* Welcome.tiff in Resources */,
 				2E12E203156F363C0087EFC6 /* Retina.png in Resources */,
 				2E12E205156F36E20087EFC6 /* Normal.png in Resources */,
 				2EF7B76C1578520E00FAAF59 /* Expenses.jpg in Resources */,
@@ -339,7 +339,7 @@
 				2EB9B1AA157890B4009E3C32 /* AddExpense.tiff in Resources */,
 				2EB9B1AB157890B4009E3C32 /* Expenses.tiff in Resources */,
 				2EB9B1AC157890B4009E3C32 /* Settings.tiff in Resources */,
-				2EB9B1AD157890B4009E3C32 /* Spending Plan.tiff in Resources */,
+				2EB9B1AD157890B4009E3C32 /* SpendingPlan.jpg in Resources */,
 				2EB9B1AE157890B4009E3C32 /* Summary.tiff in Resources */,
 				2EB9B1B01578E0E2009E3C32 /* Welcome.tiff in Resources */,
 				2EB4E9B4157AA5A6000BC313 /* Default.png in Resources */,
