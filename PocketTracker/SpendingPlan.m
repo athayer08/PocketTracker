@@ -2,17 +2,17 @@
 //  SpendingPlan.m
 //  PocketTracker
 //
-//  Created by Andrew Thayer on 5/24/12.
-//  Copyright (c) 2012 __CredAbility__. All rights reserved.
+//  Created by OSU 758 Capstone on 5/12/12.
+//  Copyright (c) 2012 Credibility. All rights reserved.
 //
-// Implementation file
 
 #import "SpendingPlan.h"
 
-
 @implementation SpendingPlan
 
-@dynamic date;
+//amount of added income
 @dynamic amount;
+//date that the income was entered
+@dynamic date;
 
 @end
