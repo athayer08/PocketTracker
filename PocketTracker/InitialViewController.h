@@ -1,7 +1,6 @@
 //
 //  InitialViewController.h
 //  PocketTracker
-//  sdfsdfsdfsd
 //
 //  Created by Andrew Thayer on 5/14/12.
 //  Copyright (c) 2012 __CredAbility__. All rights reserved.
