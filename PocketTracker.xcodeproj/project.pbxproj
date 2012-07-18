@@ -29,9 +29,7 @@
 		2EB9B1AA157890B4009E3C32 /* AddExpense.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A4157890B4009E3C32 /* AddExpense.tiff */; };
 		2EB9B1AB157890B4009E3C32 /* Expenses.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A5157890B4009E3C32 /* Expenses.tiff */; };
 		2EB9B1AC157890B4009E3C32 /* Settings.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A6157890B4009E3C32 /* Settings.tiff */; };
-		2EB9B1AD157890B4009E3C32 /* SpendingPlan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A7157890B4009E3C32 /* SpendingPlan.jpg */; };
 		2EB9B1AE157890B4009E3C32 /* Summary.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1A8157890B4009E3C32 /* Summary.tiff */; };
-		2EB9B1B01578E0E2009E3C32 /* Welcome.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 2EB9B1AF1578E0E2009E3C32 /* Welcome.tiff */; };
 		2EBE1B7F159262B1006A2900 /* CustomCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE1B7E159262B1006A2900 /* CustomCategoriesViewController.m */; };
 		2EBE1B82159263F3006A2900 /* CustomCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE1B81159263F3006A2900 /* CustomCategories.m */; };
 		2EC3706F159381720098AB43 /* AddCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC3706E159381720098AB43 /* AddCategoryViewController.m */; };
@@ -339,9 +337,7 @@
 				2EB9B1AA157890B4009E3C32 /* AddExpense.tiff in Resources */,
 				2EB9B1AB157890B4009E3C32 /* Expenses.tiff in Resources */,
 				2EB9B1AC157890B4009E3C32 /* Settings.tiff in Resources */,
-				2EB9B1AD157890B4009E3C32 /* SpendingPlan.jpg in Resources */,
 				2EB9B1AE157890B4009E3C32 /* Summary.tiff in Resources */,
-				2EB9B1B01578E0E2009E3C32 /* Welcome.tiff in Resources */,
 				2EB4E9B4157AA5A6000BC313 /* Default.png in Resources */,
 				2EB4E9B6157AA5AB000BC313 /* Default@2x.png in Resources */,
 			);
