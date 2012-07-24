@@ -83,6 +83,14 @@
 {
     [super viewWillAppear:animated];
     
+    if (self.datePicker) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        self.datePicker.minimumDate = [defaults objectForKey:@"startDate"];
+        self.datePicker.maximumDate = [defaults objectForKey:@"endDate"];
+        
+        [self.tableView reloadData];
+    }
+    
     for (NSInteger i = 9; i < [pickerCategories count] ; i++) {
         [pickerCategories removeObjectAtIndex:i];
     }
@@ -160,11 +168,8 @@
     if ([defaults objectForKey:@"startDate"]) {
         NSDate *minimumDate = [defaults objectForKey:@"startDate"];
         self.datePicker.minimumDate = minimumDate;
-        
-        NSTimeInterval thirtyDays = 30 * 24 * 60 * 60;
-        
-        NSDate *maximumDate = [minimumDate dateByAddingTimeInterval:thirtyDays];
-        self.datePicker.maximumDate = maximumDate;
+
+        self.datePicker.maximumDate = [defaults objectForKey:@"endDate"];
     }
     
     self.amountTag = 0;

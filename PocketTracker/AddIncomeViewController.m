@@ -28,6 +28,19 @@
     [self.dateInput resignFirstResponder];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (self.datePicker) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        self.datePicker.minimumDate = [defaults objectForKey:@"startDate"];
+        self.datePicker.maximumDate = [defaults objectForKey:@"endDate"];
+        
+        [self.tableView reloadData];
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -92,10 +105,7 @@
         NSDate *minimumDate = [defaults objectForKey:@"startDate"];
         self.datePicker.minimumDate = minimumDate;
         
-        NSTimeInterval thirtyDays = 30 * 24 * 60 * 60;
-        
-        NSDate *maximumDate = [minimumDate dateByAddingTimeInterval:thirtyDays];
-        self.datePicker.maximumDate = maximumDate;
+        self.datePicker.maximumDate = [defaults objectForKey:@"endDate"];
     }
     
     self.dateInput = [[UITextField alloc] initWithFrame:CGRectMake(120, 12, 170, 30)];

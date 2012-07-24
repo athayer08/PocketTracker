@@ -380,6 +380,8 @@
                 
                 //Stores the start date in the defaults.
                 [defaults setObject:self.datePicker.date forKey:@"startDate"];
+                NSTimeInterval thirtyDays = 30 * 24 * 60 * 60;
+                [defaults setObject:[NSDate dateWithTimeInterval:thirtyDays sinceDate:self.datePicker.date] forKey:@"endDate"];
                 [defaults synchronize];
                 
                 //Loads the Tab Bar Controller that controls the Summary, Spending Plan, Add Expense, etc. Views.

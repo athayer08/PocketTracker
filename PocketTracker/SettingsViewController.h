@@ -11,8 +11,9 @@
 #import "SpendingPlan.h"
 #import "Expenses.h"
 
-@interface SettingsViewController : UITableViewController <UITextFieldDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
+@interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MFMailComposeViewControllerDelegate, UIAlertViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tView;
 @property (strong, nonatomic) UIManagedDocument *document;
 
 //Property that represents an object that queries the file system for

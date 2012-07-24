@@ -14,7 +14,7 @@
 
 //Method is envoked when the application is started.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+{    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     UIViewController *initialVC;
     
@@ -24,7 +24,7 @@
         
         self.window.rootViewController = initialVC;
     }
-    
+
     return YES;
 }
 							
@@ -55,10 +55,11 @@
     if ([defaults boolForKey:@"notFirstLoad"]) { //If this is not the first load of the application...
         
         //Calculate the end date
-        NSDate *startDate = [defaults objectForKey:@"startDate"];
-        NSTimeInterval thirtyDays = 30 * 24 * 60 * 60;
-        NSDate *endDate = [startDate dateByAddingTimeInterval:thirtyDays];
-
+        NSDate *endDate = [defaults objectForKey:@"endDate"];
+        //NSTimeInterval test = -2 * 24 * 60 * 60;
+        //NSTimeInterval test1 = -1 * 24 * 60 * 60;
+        //NSDate *startDate = [[NSDate date] dateByAddingTimeInterval:test];
+        //NSDate *endDate = [[NSDate date] dateByAddingTimeInterval:test1];
         NSInteger comps = (NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit);
         
         NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -77,6 +78,7 @@
             UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
             UIViewController *controller = [storyBoard instantiateViewControllerWithIdentifier:@"Initial View"];
             [defaults setBool:YES forKey:@"e-mailNotify"];
+            [defaults synchronize];
             self.window.rootViewController = controller;
         }
         

@@ -23,6 +23,8 @@
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) UILabel *budgetLabel;
 @property (nonatomic, strong) UILabel *expenseLabel;
+@property (nonatomic, strong) UILabel *datesLabel;
+@property (nonatomic, strong) UILabel *legendLabel;
 @property (nonatomic, strong) NSMutableArray *categoryCount;
 
 @end

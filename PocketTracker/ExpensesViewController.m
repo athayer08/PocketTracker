@@ -338,6 +338,11 @@
             cell.detailTextLabel.text = [self calculateTotalBudgetString];
         } else if (indexPath.row == 1) {
             cell.textLabel.text = @"Balance";
+            if ([[self calculateBalanceString] characterAtIndex:0] == 40) {
+                cell.detailTextLabel.textColor = [UIColor redColor];
+            } else {
+                cell.detailTextLabel.textColor = [UIColor colorWithRed:0.243 green:0.306 blue:0.435 alpha:1.0];
+            }
             cell.detailTextLabel.text = [self calculateBalanceString];
         }
     } else if (indexPath.section == 2) {

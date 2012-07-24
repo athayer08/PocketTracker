@@ -10,6 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import <unistd.h>
 
 @interface PocketTrackerAppDelegate : UIResponder <UIApplicationDelegate>
 

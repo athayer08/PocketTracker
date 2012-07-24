@@ -14,6 +14,7 @@
 
 @implementation SettingsViewController
 
+@synthesize tView;
 @synthesize document;
 @synthesize fetchedBudget;
 @synthesize fetchedExpenses;
@@ -257,6 +258,9 @@
 
 - (void)viewDidLoad
 {
+    self.tView.delegate = self;
+    self.tView.dataSource = self;
+    
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     url = [url URLByAppendingPathComponent:@"Pocket Tracker Database"];
     self.document = [[UIManagedDocument alloc] initWithFileURL:url];
@@ -285,6 +289,7 @@
 
 - (void)viewDidUnload
 {
+    [self setTView:nil];
     [super viewDidUnload];    
 }
 
@@ -293,16 +298,55 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 5;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"Settings Cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Settings Cell"];
+    }
+    
+    if (indexPath.section == 0) {
+        cell.textLabel.text = @"View Tutorial";
+    } else if (indexPath.section == 1) {
+        cell.textLabel.text = @"Reset Data";
+    } else if (indexPath.section == 2) {
+        cell.textLabel.text = @"Send Report";
+    } else if (indexPath.section == 3) {
+        cell.textLabel.text = @"Custom Categories";
+    } else if (indexPath.section == 4) {
+        cell.textLabel.text = @"Date Range";
+    }
+    
+    return cell;
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 1 && indexPath.row == 0) {
+    if (indexPath.section == 0) {
+        [self performSegueWithIdentifier:@"View Tutorial" sender:self];
+    } else if (indexPath.section == 1) {
         UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Credability: Pocket Tracker" message:@"Delete all Expense and Spending Plan data?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         alertView.delegate = self;
         [alertView show];
-    }  else if (indexPath.section == 2 && indexPath.row == 0) {
+    } else if (indexPath.section == 2) {
          [self showEmailModalView];
+    } else if (indexPath.section == 3) {
+        [self performSegueWithIdentifier:@"Custom Categories" sender:self];
+    } else if (indexPath.section == 4) {
+        [self performSegueWithIdentifier:@"Date Range" sender:self];
     }
 }
 

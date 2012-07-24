@@ -13,6 +13,8 @@
 		2E813B3D156F1E9E00BFB517 /* AddIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E813B3A156F1E9E00BFB517 /* AddIncomeViewController.m */; };
 		2E813B3E156F1E9E00BFB517 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E813B3C156F1E9E00BFB517 /* SettingsViewController.m */; };
 		2E813B41156F1EB300BFB517 /* SpendingPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E813B40156F1EB300BFB517 /* SpendingPlanViewController.m */; };
+		2E820D8315B9E74C00EBFD5C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E820D8115B9E74C00EBFD5C /* MainStoryboard.storyboard */; };
+		2E820D8615B9FAC000EBFD5C /* DateRangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E820D8515B9FAC000EBFD5C /* DateRangeViewController.m */; };
 		2E874CC0156AC92200A32E3B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E874CBF156AC92200A32E3B /* MessageUI.framework */; };
 		2E899FB6158BCD330052BE76 /* EditExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E899FB5158BCD330052BE76 /* EditExpenseViewController.m */; };
 		2E90771815599A8D00B07ADD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E90771715599A8D00B07ADD /* CoreData.framework */; };
@@ -40,7 +42,6 @@
 		2ED58CBE154E100B00FBBEB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2ED58CBC154E100B00FBBEB7 /* InfoPlist.strings */; };
 		2ED58CC0154E100B00FBBEB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED58CBF154E100B00FBBEB7 /* main.m */; };
 		2ED58CC4154E100B00FBBEB7 /* PocketTrackerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED58CC3154E100B00FBBEB7 /* PocketTrackerAppDelegate.m */; };
-		2ED58CC7154E100B00FBBEB7 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED58CC5154E100B00FBBEB7 /* MainStoryboard.storyboard */; };
 		2ED58CD2154E10BF00FBBEB7 /* AddExpenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED58CD1154E10BF00FBBEB7 /* AddExpenseViewController.m */; };
 		2ED58CD5154E10D400FBBEB7 /* ExpensesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED58CD4154E10D400FBBEB7 /* ExpensesViewController.m */; };
 		2EF7B76C1578520E00FAAF59 /* Expenses.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2EF7B76B1578520E00FAAF59 /* Expenses.jpg */; };
@@ -79,6 +80,9 @@
 		2E813B3C156F1E9E00BFB517 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2E813B3F156F1EB300BFB517 /* SpendingPlanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpendingPlanViewController.h; sourceTree = "<group>"; };
 		2E813B40156F1EB300BFB517 /* SpendingPlanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpendingPlanViewController.m; sourceTree = "<group>"; };
+		2E820D8215B9E74C00EBFD5C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = PocketTracker/en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		2E820D8415B9FAC000EBFD5C /* DateRangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateRangeViewController.h; sourceTree = "<group>"; };
+		2E820D8515B9FAC000EBFD5C /* DateRangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateRangeViewController.m; sourceTree = "<group>"; };
 		2E874CBF156AC92200A32E3B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		2E899FB4158BCD330052BE76 /* EditExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditExpenseViewController.h; sourceTree = "<group>"; };
 		2E899FB5158BCD330052BE76 /* EditExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditExpenseViewController.m; sourceTree = "<group>"; };
@@ -119,7 +123,6 @@
 		2ED58CC1154E100B00FBBEB7 /* PocketTracker-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketTracker-Prefix.pch"; sourceTree = "<group>"; };
 		2ED58CC2154E100B00FBBEB7 /* PocketTrackerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PocketTrackerAppDelegate.h; sourceTree = "<group>"; };
 		2ED58CC3154E100B00FBBEB7 /* PocketTrackerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PocketTrackerAppDelegate.m; sourceTree = "<group>"; };
-		2ED58CC6154E100B00FBBEB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2ED58CD0154E10BF00FBBEB7 /* AddExpenseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddExpenseViewController.h; sourceTree = "<group>"; };
 		2ED58CD1154E10BF00FBBEB7 /* AddExpenseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddExpenseViewController.m; sourceTree = "<group>"; };
 		2ED58CD3154E10D400FBBEB7 /* ExpensesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpensesViewController.h; sourceTree = "<group>"; };
@@ -194,6 +197,7 @@
 		2ED58CB9154E100B00FBBEB7 /* PocketTracker */ = {
 			isa = PBXGroup;
 			children = (
+				2E820D8115B9E74C00EBFD5C /* MainStoryboard.storyboard */,
 				2EF7B771157858D100FAAF59 /* AtAGlance.png */,
 				2EF7B76F1578536900FAAF59 /* CA_tag_4c.jpg */,
 				2EF7B76D1578521E00FAAF59 /* SpendingPlan.jpg */,
@@ -209,7 +213,6 @@
 				2E9997831559CC320098C6A4 /* Expenses.m */,
 				2ED58CC2154E100B00FBBEB7 /* PocketTrackerAppDelegate.h */,
 				2ED58CC3154E100B00FBBEB7 /* PocketTrackerAppDelegate.m */,
-				2ED58CC5154E100B00FBBEB7 /* MainStoryboard.storyboard */,
 				2EC3706D159381720098AB43 /* AddCategoryViewController.h */,
 				2EC3706E159381720098AB43 /* AddCategoryViewController.m */,
 				2E899FB4158BCD330052BE76 /* EditExpenseViewController.h */,
@@ -231,6 +234,8 @@
 				2ED58CD4154E10D400FBBEB7 /* ExpensesViewController.m */,
 				2EBE1B7D159262B1006A2900 /* CustomCategoriesViewController.h */,
 				2EBE1B7E159262B1006A2900 /* CustomCategoriesViewController.m */,
+				2E820D8415B9FAC000EBFD5C /* DateRangeViewController.h */,
+				2E820D8515B9FAC000EBFD5C /* DateRangeViewController.m */,
 			);
 			path = PocketTracker;
 			sourceTree = "<group>";
@@ -324,7 +329,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED58CBE154E100B00FBBEB7 /* InfoPlist.strings in Resources */,
-				2ED58CC7154E100B00FBBEB7 /* MainStoryboard.storyboard in Resources */,
 				2EAF787715618CFB008B304C /* CredAbility.png in Resources */,
 				2EC594FE15635A3A00C1E5ED /* Welcome.tiff in Resources */,
 				2E12E203156F363C0087EFC6 /* Retina.png in Resources */,
@@ -340,6 +344,7 @@
 				2EB9B1AE157890B4009E3C32 /* Summary.tiff in Resources */,
 				2EB4E9B4157AA5A6000BC313 /* Default.png in Resources */,
 				2EB4E9B6157AA5AB000BC313 /* Default@2x.png in Resources */,
+				2E820D8315B9E74C00EBFD5C /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +371,7 @@
 				2EBE1B7F159262B1006A2900 /* CustomCategoriesViewController.m in Sources */,
 				2EBE1B82159263F3006A2900 /* CustomCategories.m in Sources */,
 				2EC3706F159381720098AB43 /* AddCategoryViewController.m in Sources */,
+				2E820D8615B9FAC000EBFD5C /* DateRangeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,20 +386,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2E820D8115B9E74C00EBFD5C /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2E820D8215B9E74C00EBFD5C /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		2ED58CBC154E100B00FBBEB7 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2ED58CBD154E100B00FBBEB7 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		2ED58CC5154E100B00FBBEB7 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2ED58CC6154E100B00FBBEB7 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -24,6 +24,8 @@
 @synthesize budgetLabel;
 @synthesize categoryCount;
 @synthesize fetchedCategories;
+@synthesize datesLabel;
+@synthesize legendLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -128,6 +130,26 @@
     [labelText appendString:[formatter stringFromNumber:[NSNumber numberWithFloat:totalExpenses]]];
     
     self.expenseLabel.text = labelText;
+    
+    NSDate *startDate = [defaults objectForKey:@"startDate"];
+    NSDate *endDate = [defaults objectForKey:@"endDate"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/YYYY"];
+    labelText = [[NSMutableString alloc] init];
+    [labelText appendString:[dateFormatter stringFromDate:startDate]];
+    [labelText appendString:@" - "];
+    [labelText appendString:[dateFormatter stringFromDate:endDate]];
+    self.datesLabel.text = labelText;
+    self.datesLabel.font = [UIFont boldSystemFontOfSize:20];
+    
+    labelText = [[NSMutableString alloc] init];
+    if ([self.fetchedExpenses.fetchedObjects count] == 0 || !self.fetchedExpenses.fetchedObjects) {
+        [labelText appendString:@"No Expenses"];
+    } else {        
+        [labelText appendString:@""];
+    }
+    self.legendLabel.text = labelText;
+    
 }
 
 -(void)setupPieChart
@@ -145,20 +167,9 @@
     
     self.expenseLabel = [[UILabel alloc] initWithFrame:CGRectMake(12.5, 140, (screenRect.size.width - 25), 44)];
     self.budgetLabel = [[UILabel alloc] initWithFrame:CGRectMake(12.5, 75, (screenRect.size.width - 25), 44)];
+    self.legendLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 280, (screenRect.size.width - 25), 44)];
     
-    UILabel *datesLabel = [[UILabel alloc] initWithFrame:CGRectMake((screenRect.size.width / 4) - 30, 20, (screenRect.size.width), 44)];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDate *startDate = [defaults objectForKey:@"startDate"];
-    NSTimeInterval interval = 30 * 24 * 60 * 60;
-    NSDate *endDate = [startDate dateByAddingTimeInterval:interval];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MM/dd/YYYY"];
-    NSMutableString *labelText = [[NSMutableString alloc] init];
-    [labelText appendString:[formatter stringFromDate:startDate]];
-    [labelText appendString:@" - "];
-    [labelText appendString:[formatter stringFromDate:endDate]];
-    datesLabel.text = labelText;
-    datesLabel.font = [UIFont boldSystemFontOfSize:20];
+    self.datesLabel = [[UILabel alloc] initWithFrame:CGRectMake((screenRect.size.width / 4) - 30, 20, (screenRect.size.width), 44)];
     
     [self setupSummaryLabels];
         
@@ -196,6 +207,7 @@
     [self.view addSubview:self.budgetLabel];
     [self.view addSubview:self.progressView];
     [self.view addSubview:self.expenseLabel];
+    [self.view addSubview:self.legendLabel];
     [self.view addSubview:hostingView];
 }
 
@@ -217,6 +229,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"Tab Controller"];
+    [[[tabController.tabBar items] objectAtIndex:0] setEnabled:NO];
+    [[[tabController.tabBar items] objectAtIndex:1] setEnabled:NO];
+    [[[tabController.tabBar items] objectAtIndex:2] setEnabled:NO];
+    [[[tabController.tabBar items] objectAtIndex:3] setEnabled:NO];
+    [[[tabController.tabBar items] objectAtIndex:4] setEnabled:NO];
+    UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
+    loadingView.opaque = NO;
+    loadingView.backgroundColor = [UIColor darkGrayColor];
+    loadingView.alpha = 0.5;
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    loading.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    loading.center = self.view.center;
+    [loadingView addSubview:loading];
+    [self.view addSubview:loadingView];
+    
+    [loading startAnimating];
+    
     NSLog(@"Summary Load");
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     url = [url URLByAppendingPathComponent:@"Pocket Tracker Database"];
@@ -226,6 +258,13 @@
         [document openWithCompletionHandler:^(BOOL success) {
             if (success) {
                 [self setupPieChart];
+                [[[tabController.tabBar items] objectAtIndex:0] setEnabled:YES];
+                [[[tabController.tabBar items] objectAtIndex:1] setEnabled:YES];
+                [[[tabController.tabBar items] objectAtIndex:2] setEnabled:YES];
+                [[[tabController.tabBar items] objectAtIndex:3] setEnabled:YES];
+                [[[tabController.tabBar items] objectAtIndex:4] setEnabled:YES];
+                [loadingView removeFromSuperview];
+                [loading stopAnimating];
             } else {
                 NSLog(@"count open document at %@", url);
             }
@@ -235,11 +274,19 @@
             if (success)
             {
                 [self setupPieChart];
+                [[[tabController.tabBar items] objectAtIndex:0] setEnabled:YES];
+                [[[tabController.tabBar items] objectAtIndex:1] setEnabled:YES];
+                [[[tabController.tabBar items] objectAtIndex:2] setEnabled:YES];
+                [[[tabController.tabBar items] objectAtIndex:3] setEnabled:YES];
+                [[[tabController.tabBar items] objectAtIndex:4] setEnabled:YES];
+                [loadingView removeFromSuperview];
+                [loading stopAnimating];
             } else {
                 NSLog(@"couldn't create document at %@", url);
             }
         }];
     }
+    
 }
 
 - (void)viewDidUnload
@@ -255,11 +302,15 @@
 
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
-    [self setupFetchedCategoriesController];
-    NSError *error;
-    [self.fetchedCategories performFetch:&error];
-    
-    return (9 + [self.fetchedCategories.fetchedObjects count]);
+    if ([self.fetchedExpenses.fetchedObjects count] == 0 || !self.fetchedExpenses.fetchedObjects) {
+        return 1;
+    } else {
+        [self setupFetchedCategoriesController];
+        NSError *error;
+        [self.fetchedCategories performFetch:&error];
+        
+        return (9 + [self.fetchedCategories.fetchedObjects count]);
+    }
 }
 
 -(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
@@ -289,8 +340,9 @@
     if ([self.fetchedCategories.fetchedObjects count] > 0) {
         for (NSInteger i = 0; i < [self.fetchedCategories.fetchedObjects count]; i++) {
             if (index == (categoryIndex + i)) {
-                NSLog(@"fetched category: %@", [self.fetchedCategories.fetchedObjects objectAtIndex:i]);
-                category = [self.fetchedCategories.fetchedObjects objectAtIndex:i];
+                CustomCategories *customCategory = [self.fetchedCategories.fetchedObjects objectAtIndex:i];
+                NSLog(@"fetched category: %@", customCategory.category);
+                category = customCategory.category;
             }
         }
     }
@@ -300,17 +352,31 @@
     [self setupFetchedResultsController:category];
     
     float expenseAmount = 0.0;
-    for (Expenses *expense in self.fetchedExpenses.fetchedObjects)
-    {
-        NSString *formatted = [expense.amount stringByReplacingOccurrencesOfString:@"$" withString:@""];
-        formatted = [formatted stringByReplacingOccurrencesOfString:@"," withString:@""];
-        
-        expenseAmount = expenseAmount + [formatted floatValue];
+    
+    if ([self.fetchedExpenses.fetchedObjects count] == 0 || !self.fetchedExpenses.fetchedObjects) {
+        expenseAmount = 1.0;
+    } else {
+        for (Expenses *expense in self.fetchedExpenses.fetchedObjects)
+        {
+            NSString *formatted = [expense.amount stringByReplacingOccurrencesOfString:@"$" withString:@""];
+            formatted = [formatted stringByReplacingOccurrencesOfString:@"," withString:@""];
+            
+            expenseAmount = expenseAmount + [formatted floatValue];
+        }        
     }
     
     NSNumber *amount = [NSNumber numberWithFloat:expenseAmount];
-    
+
     return amount;
+}
+
+-(CPTFill *)sliceFillForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index
+{
+    if ([self.fetchedExpenses.fetchedObjects count] == 0 || !self.fetchedExpenses.fetchedObjects) {
+        return [CPTFill fillWithColor:[CPTColor greenColor]];
+    } else {
+        return [CPTFill fillWithColor:[CPTPieChart defaultPieSliceColorForIndex:index]];
+    }    
 }
 
 -(NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index
@@ -334,6 +400,17 @@
         category = @"Savings";
     } else if (index == 8) {
         category = @"Miscellaneous";
+    }
+    
+    NSInteger categoryIndex = 9;
+    if ([self.fetchedCategories.fetchedObjects count] > 0) {
+        for (NSInteger i = 0; i < [self.fetchedCategories.fetchedObjects count]; i++) {
+            if (index == (categoryIndex + i)) {
+                CustomCategories *customCategory = [self.fetchedCategories.fetchedObjects objectAtIndex:i];
+                NSLog(@"fetched category: %@", customCategory.category);
+                category = customCategory.category;
+            }
+        }
     }
     
     [self setupFetchedResultsController:category];
