@@ -115,6 +115,18 @@
 {
     [super viewDidLoad];
     
+    UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
+    loadingView.opaque = NO;
+    loadingView.backgroundColor = [UIColor darkGrayColor];
+    loadingView.alpha = 0.5;
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    loading.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    loading.center = self.view.center;
+    [loadingView addSubview:loading];
+    [self.view addSubview:loadingView];
+    
+    [loading startAnimating];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -239,6 +251,9 @@
     [methodBar setItems:methodBarItems];
     self.methodInput.inputView = self.paymentPicker;
     self.methodInput.inputAccessoryView = methodBar;
+    
+    [loadingView removeFromSuperview];
+    [loading stopAnimating];
 }
 
 - (void)viewDidUnload
@@ -317,7 +332,6 @@
         [cell addSubview:self.methodInput];
         self.methodInput.text = [self.paymentMethods objectAtIndex:row];
     }
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
 }
 
@@ -326,6 +340,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"row = %i, section = %i", indexPath.row, indexPath.section);
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if(indexPath.row == 0 && indexPath.section == 0) {
         [self.categoryInput becomeFirstResponder];

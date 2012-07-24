@@ -152,6 +152,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 - (IBAction)addCategory:(id)sender {
+    
 }
 
 - (IBAction)editCategories:(id)sender {

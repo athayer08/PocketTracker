@@ -143,6 +143,18 @@
         [self updateCategories];
         [self doFetch];
     } else {
+        UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
+        loadingView.opaque = NO;
+        loadingView.backgroundColor = [UIColor darkGrayColor];
+        loadingView.alpha = 0.5;
+        UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        loading.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+        loading.center = self.view.center;
+        [loadingView addSubview:loading];
+        [self.view addSubview:loadingView];
+        
+        [loading startAnimating];
+        
         NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
         url = [url URLByAppendingPathComponent:@"Pocket Tracker Database"];
         self.document = [[UIManagedDocument alloc] initWithFileURL:url];
@@ -151,6 +163,8 @@
             [self.document openWithCompletionHandler:^(BOOL success) {
                 if (success) {
                     [self setupFetchedResultsController];
+                    [loadingView removeFromSuperview];
+                    [loading stopAnimating];
                 } else {
                     NSLog(@"count open document at %@", url);
                 }
@@ -160,6 +174,8 @@
                 if (success)
                 {
                     [self setupFetchedResultsController];
+                    [loadingView removeFromSuperview];
+                    [loading stopAnimating];
                 } else {
                     NSLog(@"couldn't create document at %@", url);
                 }
@@ -259,6 +275,7 @@
     self.methodInput.inputAccessoryView = methodBar;
     
     [super viewDidLoad];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -345,6 +362,8 @@
             }
             cell.detailTextLabel.text = [self calculateBalanceString];
         }
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     } else if (indexPath.section == 2) {
         
         Expenses *expense = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
@@ -445,8 +464,9 @@
             cell.detailTextLabel.text = expense.amount;
         }
         cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     }
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     
     return cell;
 }
@@ -481,6 +501,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (indexPath.section != 0) {
 
     } else {

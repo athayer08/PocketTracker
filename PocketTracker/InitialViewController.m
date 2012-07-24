@@ -103,63 +103,6 @@
     return totalBudget;
 }
 
-//Encodes images into a base 64 string.
--(NSString *)Base64Encode:(NSData *)data{
-    //Point to start of the data and set buffer sizes
-    int inLength = [data length];
-    int outLength = ((((inLength * 4)/3)/4)*4) + (((inLength * 4)/3)%4 ? 4 : 0);
-    const char *inputBuffer = [data bytes];
-    char *outputBuffer = malloc(outLength);
-    outputBuffer[outLength] = 0;
-    
-    //64 digit code
-    static char Encode[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    
-    //start the count
-    int cycle = 0;
-    int inpos = 0;
-    int outpos = 0;
-    char temp;
-    
-    //Pad the last to bytes, the outbuffer must always be a multiple of 4
-    outputBuffer[outLength-1] = '=';
-    outputBuffer[outLength-2] = '=';
-    
-    while (inpos < inLength){
-        switch (cycle) {
-            case 0:
-                outputBuffer[outpos++] = Encode[(inputBuffer[inpos]&0xFC)>>2];
-                cycle = 1;
-                break;
-            case 1:
-                temp = (inputBuffer[inpos++]&0x03)<<4;
-                outputBuffer[outpos] = Encode[temp];
-                cycle = 2;
-                break;
-            case 2:
-                outputBuffer[outpos++] = Encode[temp|(inputBuffer[inpos]&0xF0)>> 4];
-                temp = (inputBuffer[inpos++]&0x0F)<<2;
-                outputBuffer[outpos] = Encode[temp];
-                cycle = 3;                  
-                break;
-            case 3:
-                outputBuffer[outpos++] = Encode[temp|(inputBuffer[inpos]&0xC0)>>6];
-                cycle = 4;
-                break;
-            case 4:
-                outputBuffer[outpos++] = Encode[inputBuffer[inpos++]&0x3f];
-                cycle = 0;
-                break;                          
-            default:
-                cycle = 0;
-                break;
-        }
-    }
-    NSString *pictemp = [NSString stringWithUTF8String:outputBuffer];
-    free(outputBuffer); 
-    return pictemp;
-}
-
 //Displays the e-mail with HTML.
 -(void) showEmailModalView 
 {
@@ -170,28 +113,12 @@
     NSMutableString *messageBody = [[NSMutableString alloc] init];
     
     //Beginning of the HTML
-    [messageBody appendString:@"<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\"><html><head><title>Pocket Tracker E-mail</title><style type=\"text/css\"><style type=\"text/css\"></style><meta content=\"andrewthayer\" name=\"author\"><meta content=\"BlueGriffon wysiwyg editor\" name=\"generator\"><meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"></head><body><div class=\"yui-t1\" id=\"doc3\"><div id=\"hd\"><br><p align=\"center\"><img title=\"Credability Logo\" alt=\"\" src=\"data:image/png;base64,"];
-    
-    //Sets up the CredAbility Logo to be embedded into the HTML
-    NSString *logoPng = [[NSBundle mainBundle] pathForResource:@"CA_tag_4c"
-                                                         ofType:@"jpg"];
-    UIImage *imageLogo = [[UIImage alloc] initWithContentsOfFile:logoPng];
-    NSData *imageLogoData = UIImagePNGRepresentation(imageLogo);
-    NSString *logoBase64String = [self Base64Encode:imageLogoData];
-    [messageBody appendString:logoBase64String];
+    [messageBody appendString:@"<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\"><html><head><title>Pocket Tracker E-mail</title><style type=\"text/css\"><style type=\"text/css\"></style><meta content=\"andrewthayer\" name=\"author\"><meta content=\"BlueGriffon wysiwyg editor\" name=\"generator\"><meta content=\"text/html; charset=UTF-8\" http-equiv=\"content-type\"></head><body><div class=\"yui-t1\" id=\"doc3\"><div id=\"hd\"><br><p align=\"center\"><img title=\"Credability Logo\" alt=\"\" src=\"http://www.credability.org/assets/images/mobile/CA_tag_4c.jpg"];
     
     //Continuation of the HTML
-    [messageBody appendString:@"\"></p><p align=\"center\"><a href=\"file:///Users/andrewthayer/Pictures/E-Mail%20Pictures/www.CredAbility.org\">www.CredAbility.org</a>&nbsp;&nbsp;&nbsp;800.251.2227</p><p align=\"center\"><br></p><p><img title=\"AtAGlance\" alt=\"\" src=\"data:image/png;base64,"];
+    [messageBody appendString:@"\"></p><p align=\"center\"><a href=\"file:///Users/andrewthayer/Pictures/E-Mail%20Pictures/www.CredAbility.org\">www.CredAbility.org</a>&nbsp;&nbsp;&nbsp;800.251.2227</p><p align=\"center\"><br></p><p><img title=\"AtAGlance\" alt=\"\" src=\"http://www.credability.org/assets/images/mobile/AtAGlance.png"];
     
-    //Sets up the At a Glance image to be embedded into the HTML.
-     NSString *atAGlancePng = [[NSBundle mainBundle] pathForResource:@"AtAGlance"
-                                                              ofType:@"png"];
-    UIImage *image = [[UIImage alloc] initWithContentsOfFile:atAGlancePng];
-    NSData *imageData = UIImagePNGRepresentation(image);
-    NSString *base64String = [self Base64Encode:imageData];
-    [messageBody appendString:base64String];
-     
-    //Continuation of the HTML
+        //Continuation of the HTML
     [messageBody appendString:@"\" height=\"113\"width=\"321\"><p><p></p><p></p>"];
     
     //Fetches the Spending Plan entires
@@ -235,14 +162,8 @@
     //Formats the difference and adds it to the HTML string.
     NSNumber *diffNum = [NSNumber numberWithFloat:difference];
     [messageBody appendString:[numFormatter stringFromNumber:diffNum]];
-    [messageBody appendString:@"<br></td></tr></tbody></table><br><img title=\"SpendingPlan\" alt=\"\" src=\"data:image/png;base64,"];
+    [messageBody appendString:@"<br></td></tr></tbody></table><br><img title=\"SpendingPlan\" alt=\"\" src=\"http://www.credability.org/assets/images/mobile/SpendingPlan.jpg"];
     
-    //Sets up the Spending Plan image to be embedded into the HTML.
-    NSString *sPlanPng = [[NSBundle mainBundle] pathForResource:@"SpendingPlan" ofType:@"jpg"];
-    UIImage *sPlanImage = [[UIImage alloc] initWithContentsOfFile:sPlanPng];
-    NSData *sPlanImageData = UIImagePNGRepresentation(sPlanImage);
-    NSString *sPlanBase64String = [self Base64Encode:sPlanImageData];
-    [messageBody appendString:sPlanBase64String];
     [messageBody appendString:@"\" height=\"89\" width=\"320\"<br><br><table border=\"1\" width=\"100%\"><tbody><tr><td align=\"center\"><b>Date</b><br></td><td align=\"center\"><b>Amount</b></td></tr>"];
     
     //Retrieves all of the Spending Plan entries and adds them to the HTML.
@@ -256,12 +177,7 @@
     }
     
     //Formats the Expenses image to be embedded into the HTML.
-    [messageBody appendString:@"</tbody></table><br><img title=\"Expenses\" alt=\"\" src=\"data:image/png;base64,"];
-    NSString *expensePng = [[NSBundle mainBundle] pathForResource:@"Expenses" ofType:@"jpg"];
-    UIImage *expenseImage = [[UIImage alloc] initWithContentsOfFile:expensePng];
-    NSData *expenseImageData = UIImagePNGRepresentation(expenseImage);
-    NSString *expenseBase64String = [self Base64Encode:expenseImageData];
-    [messageBody appendString:expenseBase64String];
+    [messageBody appendString:@"</tbody></table><br><img title=\"Expenses\" alt=\"\" src=\"www.credability.org/assets/images/mobile/Expenses.jpg"];
     
     //Retrieves all of the expense entries and adds them to the HTML string.
     NSError *error1;

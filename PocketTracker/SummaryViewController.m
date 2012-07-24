@@ -143,7 +143,7 @@
     self.datesLabel.font = [UIFont boldSystemFontOfSize:20];
     
     labelText = [[NSMutableString alloc] init];
-    if ([self.fetchedExpenses.fetchedObjects count] == 0 || !self.fetchedExpenses.fetchedObjects) {
+    if (totalExpenses == 0.0) {
         [labelText appendString:@"No Expenses"];
     } else {        
         [labelText appendString:@""];
@@ -203,7 +203,7 @@
     self.graph.plotAreaFrame.paddingTop = 125.0f;
     self.graph.plotAreaFrame.paddingRight = 150.0f;
     
-    [self.view addSubview:datesLabel];
+    [self.view addSubview:self.datesLabel];
     [self.view addSubview:self.budgetLabel];
     [self.view addSubview:self.progressView];
     [self.view addSubview:self.expenseLabel];
@@ -230,13 +230,6 @@
 {
     [super viewDidLoad];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"Tab Controller"];
-    [[[tabController.tabBar items] objectAtIndex:0] setEnabled:NO];
-    [[[tabController.tabBar items] objectAtIndex:1] setEnabled:NO];
-    [[[tabController.tabBar items] objectAtIndex:2] setEnabled:NO];
-    [[[tabController.tabBar items] objectAtIndex:3] setEnabled:NO];
-    [[[tabController.tabBar items] objectAtIndex:4] setEnabled:NO];
     UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
     loadingView.opaque = NO;
     loadingView.backgroundColor = [UIColor darkGrayColor];
@@ -258,11 +251,6 @@
         [document openWithCompletionHandler:^(BOOL success) {
             if (success) {
                 [self setupPieChart];
-                [[[tabController.tabBar items] objectAtIndex:0] setEnabled:YES];
-                [[[tabController.tabBar items] objectAtIndex:1] setEnabled:YES];
-                [[[tabController.tabBar items] objectAtIndex:2] setEnabled:YES];
-                [[[tabController.tabBar items] objectAtIndex:3] setEnabled:YES];
-                [[[tabController.tabBar items] objectAtIndex:4] setEnabled:YES];
                 [loadingView removeFromSuperview];
                 [loading stopAnimating];
             } else {
@@ -274,11 +262,6 @@
             if (success)
             {
                 [self setupPieChart];
-                [[[tabController.tabBar items] objectAtIndex:0] setEnabled:YES];
-                [[[tabController.tabBar items] objectAtIndex:1] setEnabled:YES];
-                [[[tabController.tabBar items] objectAtIndex:2] setEnabled:YES];
-                [[[tabController.tabBar items] objectAtIndex:3] setEnabled:YES];
-                [[[tabController.tabBar items] objectAtIndex:4] setEnabled:YES];
                 [loadingView removeFromSuperview];
                 [loading stopAnimating];
             } else {
