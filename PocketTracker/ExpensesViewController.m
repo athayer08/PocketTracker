@@ -20,7 +20,7 @@
 
 -(NSString *) calculateTotalBudgetString
 {
-    float totalBudget = 0.0;
+    NSDecimalNumber *totalBudget = [NSDecimalNumber zero];
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [formatter setCurrencySymbol:@"$"];
@@ -28,11 +28,10 @@
     for (SpendingPlan *budget in self.fetchedBudgetResults.fetchedObjects) {
         NSString *entry = budget.amount;
         NSString *newEntry = [[entry substringFromIndex:1] stringByReplacingOccurrencesOfString:@"," withString:@""];
-        totalBudget = totalBudget + [newEntry floatValue];
+        totalBudget = [totalBudget decimalNumberByAdding:[NSDecimalNumber decimalNumberWithString:newEntry]];
     }
 
-    NSLog(@"Budget: $%@", [formatter stringFromNumber:[NSNumber numberWithFloat:totalBudget]]);
-    return [formatter stringFromNumber:[NSNumber numberWithFloat:totalBudget]];
+    return [formatter stringFromNumber:totalBudget];
 }
 
 -(NSString *) calculateBalanceString
@@ -40,19 +39,17 @@
     NSString *budgetString = [self calculateTotalBudgetString];
     NSString *formattedString = [budgetString stringByReplacingOccurrencesOfString:@"$" withString:@""];
     formattedString = [formattedString stringByReplacingOccurrencesOfString:@"," withString:@""];
-    float budget = [formattedString floatValue];
+    NSDecimalNumber *budget = [NSDecimalNumber decimalNumberWithString:formattedString];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    float totalExpenses = [defaults floatForKey:@"totalExpenses"];
-    NSLog(@"Total Expenses: %f", totalExpenses);
+    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [formatter setCurrencySymbol:@"$"];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
-    NSLog(@"Balance: %@", [formatter stringFromNumber:[NSNumber numberWithFloat:(budget - totalExpenses)]]);
-    return [formatter stringFromNumber:[NSNumber numberWithFloat:(budget - totalExpenses)]];
+    return [formatter stringFromNumber:[budget decimalNumberBySubtracting:totalExpenses]];
 }
 
 -(void)deselectAllRows
@@ -522,16 +519,15 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         if (editingStyle == UITableViewCellEditingStyleDelete) {
             NSInteger row = [indexPath row];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            float totalExpenses = [defaults floatForKey:@"totalExpenses"];
+            NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
             Expenses *expense = [self.fetchedResultsController.fetchedObjects objectAtIndex:row];
             NSString *formattedString = [expense.amount stringByReplacingOccurrencesOfString:@"$" withString:@""];
             formattedString = [formattedString stringByReplacingOccurrencesOfString:@"," withString:@""];
-            totalExpenses = totalExpenses - [formattedString floatValue];
-            NSLog(@"totalExpenses: %f", totalExpenses);
+            totalExpenses = [totalExpenses decimalNumberBySubtracting:[NSDecimalNumber decimalNumberWithString:formattedString]];
             [self.document.managedObjectContext deleteObject:[self.fetchedResultsController.fetchedObjects objectAtIndex:row]];
             [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
                 if (success){
-                    [defaults setFloat:totalExpenses forKey:@"totalExpenses"];
+                    [defaults setObject:[totalExpenses stringValue] forKey:@"totalExpenses"];
                     [self doFetch];
                     [tableView reloadData];
                 } else {

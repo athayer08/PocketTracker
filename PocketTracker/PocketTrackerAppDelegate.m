@@ -20,6 +20,8 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults boolForKey:@"notFirstLoad"]) { //If this is the first time the application is loading...
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:[[NSDecimalNumber zero] stringValue] forKey:@"totalExpenses"];
         initialVC = [storyboard instantiateViewControllerWithIdentifier:@"Tutorial Controller"]; //Load the tutorial. This identifier is defined in the storyboard.
         
         self.window.rootViewController = initialVC;

@@ -20,15 +20,16 @@
 @synthesize fetchedExpenses;
 
 //Calculates the total Spending Plan amount for the e-mail.
--(float)calculateTotalBudget
+-(NSDecimalNumber *)calculateOldTotalBudget
 {
-    float totalBudget = 0.0;
+    NSDecimalNumber *totalBudget = [NSDecimalNumber zero];
     for (SpendingPlan *budget in self.fetchedBudget.fetchedObjects) {
         NSString *entry = budget.amount;
         NSLog(@"Budget amount: %@", budget.amount);
         NSString *newEntry = [[entry substringFromIndex:1] stringByReplacingOccurrencesOfString:@"," withString:@""];
         newEntry = [newEntry stringByReplacingOccurrencesOfString:@"$" withString:@""];
-        totalBudget = totalBudget + [newEntry floatValue];
+        NSDecimalNumber *newDecimal = [NSDecimalNumber decimalNumberWithString:newEntry];
+        totalBudget = [totalBudget decimalNumberByAdding:newDecimal];
     }
     
     return totalBudget;
@@ -60,8 +61,7 @@
     [self.fetchedBudget performFetch:&error];
     
     //Calculate the total Spending Plan amount
-    float totalBudget = [self calculateTotalBudget];
-    NSNumber *totalSPlan = [NSNumber numberWithFloat:totalBudget];
+    NSDecimalNumber *totalBudget = [self calculateOldTotalBudget];
     
     //Formats the amount into a pretty string and adds to the HTML string.
     NSNumberFormatter *numFormatter = [[NSNumberFormatter alloc] init];
@@ -69,24 +69,23 @@
     [numFormatter setCurrencySymbol:@"$"];
     [numFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     [messageBody appendString:@"<table border=\"1\" width=\"100%\"><tbody><tr><td align=\"center\">Total 30 Day Spending Plan<br></td><td align=\"center\">"];
-    [messageBody appendString:[numFormatter stringFromNumber:totalSPlan]];
+    [messageBody appendString:[numFormatter stringFromNumber:totalBudget]];
     [messageBody appendString:@"<br></td></tr><tr><td align=\"center\">Total Expenditures<br></td><td align=\"center\">"];
     
     //Retrieves the total Expense amount.
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    float totalExpenses = [defaults floatForKey:@"totalExpenses"];
-    NSNumber *tExpenses = [NSNumber numberWithFloat:totalExpenses];
+    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
     
     //Formats the total expense amount and adds it to the HTML string.
-    [messageBody appendString:[numFormatter stringFromNumber:tExpenses]];
+    [messageBody appendString:[numFormatter stringFromNumber:totalExpenses]];
     
     //Finds the difference between the total Spending Plan and the total Expenses.
     //Determines whether the user is over, under, or on budget. Adds the result
     //to the HTML string
-    float difference = totalBudget - totalExpenses;
-    if (difference > 0) {
+    NSDecimalNumber *difference = [totalBudget decimalNumberBySubtracting:totalExpenses];
+    if ([difference compare:[NSDecimalNumber zero]] == NSOrderedDescending) {
         [messageBody appendString:@"<br></td></tr><tr><td align=\"center\">Under Budget<br></td>"];
-    } else if (difference < 0) {
+    } else if ([difference compare:[NSDecimalNumber zero]] == NSOrderedAscending) {
         [messageBody appendString:@"<br></td></tr><tr><td align=\"center\">Over Budget<br></td>"];
     } else {
         [messageBody appendString:@"<br></td></tr><tr><td align=\"center\">On Budget<br></td>"];
@@ -94,8 +93,7 @@
     [messageBody appendString:@"<td align=\"center\">"];
     
     //Formats the difference and adds it to the HTML string.
-    NSNumber *diffNum = [NSNumber numberWithFloat:difference];
-    [messageBody appendString:[numFormatter stringFromNumber:diffNum]];
+    [messageBody appendString:[numFormatter stringFromNumber:difference]];
     [messageBody appendString:@"<br></td></tr></tbody></table><br><img title=\"SpendingPlan\" alt=\"\" src=\"http://www.credability.org/assets/images/mobile/SpendingPlan.jpg"];
     
     [messageBody appendString:@"\" height=\"89\" width=\"320\"<br><br><table border=\"1\" width=\"100%\"><tbody><tr><td align=\"center\"><b>Date</b><br></td><td align=\"center\"><b>Amount</b></td></tr>"];

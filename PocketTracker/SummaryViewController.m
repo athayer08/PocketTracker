@@ -26,6 +26,7 @@
 @synthesize fetchedCategories;
 @synthesize datesLabel;
 @synthesize legendLabel;
+@synthesize pieLegend;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -70,15 +71,15 @@
     self.fetchedCategories = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.document.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
 }
 
--(float)calculateTotalBudget
+-(NSDecimalNumber *)calculateTotalBudget
 {
-    float totalBudget = 0.0;
+    NSDecimalNumber *totalBudget = [NSDecimalNumber zero];
     for (SpendingPlan *budget in self.fetchedBudget.fetchedObjects) {
         NSString *entry = budget.amount;
         NSLog(@"Budget amount: %@", budget.amount);
         NSString *newEntry = [[entry substringFromIndex:1] stringByReplacingOccurrencesOfString:@"," withString:@""];
         newEntry = [newEntry stringByReplacingOccurrencesOfString:@"$" withString:@""];
-        totalBudget = totalBudget + [newEntry floatValue];
+        totalBudget = [totalBudget decimalNumberByAdding:[NSDecimalNumber decimalNumberWithString:newEntry]];
     }
     
     return totalBudget;
@@ -89,21 +90,18 @@
     NSError *error;
     [self.fetchedBudget performFetch:&error];
     
-    float totalBudget = [self calculateTotalBudget];
+    NSDecimalNumber *totalBudget = [self calculateTotalBudget];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    float totalExpenses = [defaults floatForKey:@"totalExpenses"];
-    NSLog(@"totalExpenses: %f", totalExpenses);
-    NSLog(@"totalBudget: %f", totalBudget);
+    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
     
-    float progress = totalExpenses / totalBudget;
-    NSLog(@"progress: %f", progress);
+    NSDecimalNumber *progress = [totalExpenses decimalNumberByDividingBy:totalBudget];
     
-    if (progress > 1) {
-        progress = 1;
+    if ([progress compare:[NSDecimalNumber one]] == NSOrderedDescending) {
+        progress = [NSDecimalNumber one];
     }
     
-    [self.progressView setProgress:progress animated:YES];
+    [self.progressView setProgress:[[progress stringValue] floatValue] animated:YES];
     
 }
 
@@ -116,18 +114,18 @@
     [formatter setCurrencySymbol:@"$"];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 
-    float totalBudget = [self calculateTotalBudget];
+    NSDecimalNumber *totalBudget = [self calculateTotalBudget];
     labelText = [[NSMutableString alloc] init];
     [labelText appendString:@"Spending Plan: "];
-    [labelText appendString:[formatter stringFromNumber:[NSNumber numberWithFloat:totalBudget]]];
+    [labelText appendString:[formatter stringFromNumber:totalBudget]];
 
     self.budgetLabel.text = labelText;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    float totalExpenses = [defaults floatForKey:@"totalExpenses"];
+    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
     labelText = [[NSMutableString alloc] init];
     [labelText appendString:@"Total Expenses: "];
-    [labelText appendString:[formatter stringFromNumber:[NSNumber numberWithFloat:totalExpenses]]];
+    [labelText appendString:[formatter stringFromNumber:totalExpenses]];
     
     self.expenseLabel.text = labelText;
     
@@ -143,10 +141,14 @@
     self.datesLabel.font = [UIFont boldSystemFontOfSize:20];
     
     labelText = [[NSMutableString alloc] init];
-    if (totalExpenses == 0.0) {
+    if ([totalExpenses compare:[NSDecimalNumber zero]] == NSOrderedSame) {
         [labelText appendString:@"No Expenses"];
+        [self.graph setLegend:nil];
     } else {        
         [labelText appendString:@""];
+        [self.graph setLegend:self.pieLegend];
+        [self.graph setLegendAnchor:CPTRectAnchorBottomRight];
+        [self.graph setLegendDisplacement:CGPointMake(0.0, 75.0)];
     }
     self.legendLabel.text = labelText;
     
@@ -171,7 +173,6 @@
     
     self.datesLabel = [[UILabel alloc] initWithFrame:CGRectMake((screenRect.size.width / 4) - 30, 20, (screenRect.size.width), 44)];
     
-    [self setupSummaryLabels];
         
     CPTGraphHostingView *hostingView = [[CPTGraphHostingView alloc] initWithFrame:screenRect];
     graph = [[CPTXYGraph alloc] init];
@@ -188,20 +189,17 @@
     
     [self.graph addPlot:pieChart];
     
-    CPTLegend *pieLegend = [CPTLegend legendWithGraph:self.graph];
-    pieLegend.numberOfColumns = 1;
-    pieLegend.fill = [CPTFill fillWithColor:[CPTColor whiteColor]];
-    pieLegend.borderLineStyle = [CPTLineStyle lineStyle];
-    pieLegend.rowMargin = 0.1;
-    pieLegend.cornerRadius = 5.0;
-    
-    self.graph.legend = pieLegend;
-    
-    self.graph.legendAnchor = CPTRectAnchorBottomRight;
-    self.graph.legendDisplacement = CGPointMake(0.0, 75.0);
+    self.pieLegend = [CPTLegend legendWithGraph:self.graph];
+    self.pieLegend.numberOfColumns = 1;
+    self.pieLegend.fill = [CPTFill fillWithColor:[CPTColor whiteColor]];
+    self.pieLegend.borderLineStyle = [CPTLineStyle lineStyle];
+    self.pieLegend.rowMargin = 0.1;
+    self.pieLegend.cornerRadius = 5.0;
     
     self.graph.plotAreaFrame.paddingTop = 125.0f;
     self.graph.plotAreaFrame.paddingRight = 150.0f;
+    
+    [self setupSummaryLabels];
     
     [self.view addSubview:self.datesLabel];
     [self.view addSubview:self.budgetLabel];
@@ -213,8 +211,6 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [self.graph reloadData];
-    
     if (self.progressView) {
         [self setupProgressView];
     }
@@ -223,11 +219,15 @@
         [self setupSummaryLabels];
     }
     
+    [self.graph reloadData];
+    
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad
 {
+    NSLog(@"Summary viewDidLoad");
+    
     [super viewDidLoad];
     
     UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 480.0)];
@@ -285,7 +285,12 @@
 
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
-    if ([self.fetchedExpenses.fetchedObjects count] == 0 || !self.fetchedExpenses.fetchedObjects) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
+        
+    NSLog(@"totalExpenses: %@", totalExpenses);
+    
+    if ([totalExpenses compare:[NSDecimalNumber zero]] == NSOrderedSame) {
         return 1;
     } else {
         [self setupFetchedCategoriesController];
@@ -334,28 +339,32 @@
     
     [self setupFetchedResultsController:category];
     
-    float expenseAmount = 0.0;
+    NSDecimalNumber *expenseAmount = [NSDecimalNumber zero];
     
-    if ([self.fetchedExpenses.fetchedObjects count] == 0 || !self.fetchedExpenses.fetchedObjects) {
-        expenseAmount = 1.0;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
+    
+    if ([totalExpenses compare:[NSDecimalNumber zero]] == NSOrderedSame) {
+        expenseAmount = [NSDecimalNumber one];
     } else {
         for (Expenses *expense in self.fetchedExpenses.fetchedObjects)
         {
             NSString *formatted = [expense.amount stringByReplacingOccurrencesOfString:@"$" withString:@""];
             formatted = [formatted stringByReplacingOccurrencesOfString:@"," withString:@""];
             
-            expenseAmount = expenseAmount + [formatted floatValue];
+            expenseAmount = [expenseAmount decimalNumberByAdding:[NSDecimalNumber decimalNumberWithString:formatted]];
         }        
     }
     
-    NSNumber *amount = [NSNumber numberWithFloat:expenseAmount];
-
-    return amount;
+    return expenseAmount;
 }
 
 -(CPTFill *)sliceFillForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)index
 {
-    if ([self.fetchedExpenses.fetchedObjects count] == 0 || !self.fetchedExpenses.fetchedObjects) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
+    
+    if ([totalExpenses compare:[NSDecimalNumber zero]] == NSOrderedSame) {
         return [CPTFill fillWithColor:[CPTColor greenColor]];
     } else {
         return [CPTFill fillWithColor:[CPTPieChart defaultPieSliceColorForIndex:index]];

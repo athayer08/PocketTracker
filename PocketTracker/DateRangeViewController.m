@@ -229,26 +229,28 @@
         [self.document.managedObjectContext deleteObject:sPlan];
     }
     
-    float totalExpenses = [defaults floatForKey:@"totalExpenses"];
+    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
     for (Expenses *expense in self.fetchedExpenses.fetchedObjects)
     {
         NSLog(@"Deleting Expense: %@", expense.amount);
         
         NSString *formattedString = [expense.amount stringByReplacingOccurrencesOfString:@"$" withString:@""];
         formattedString = [formattedString stringByReplacingOccurrencesOfString:@"," withString:@""];
-        totalExpenses = totalExpenses - [formattedString floatValue];
+        totalExpenses = [totalExpenses decimalNumberBySubtracting:[NSDecimalNumber decimalNumberWithString:formattedString]];
 
         [self.document.managedObjectContext deleteObject:expense];
     }
     
-    [defaults setFloat:totalExpenses forKey:@"totalExpenses"];
+    [defaults setObject:[totalExpenses stringValue] forKey:@"totalExpenses"];
     [defaults setObject:self.startPicker.date forKey:@"startDate"];
     [defaults setObject:self.endPicker.date forKey:@"endDate"];
     [defaults synchronize];
     
     [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
         if (success){
-           
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+            UINavigationController *navController = [storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
+            [navController popToRootViewControllerAnimated:YES];
         } else {
             NSLog(@"couldn't save document at %@", self.document.fileURL);
         }

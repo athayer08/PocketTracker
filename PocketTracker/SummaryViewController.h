@@ -19,6 +19,7 @@
 @property (nonatomic, strong) NSFetchedResultsController *fetchedBudget;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedCategories;
 @property (nonatomic, strong) CPTXYGraph *graph;
+@property (nonatomic, strong) CPTLegend *pieLegend;
 @property (nonatomic) BOOL isLoading;
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) UILabel *budgetLabel;

@@ -469,7 +469,9 @@
         }
         
         NSLog(@"new string = %@", self.amount);
-        NSString *newAmount = [self formatCurrencyValue:([self.amount doubleValue]/100)];
+        NSDecimalNumber *amountDecimal = [NSDecimalNumber decimalNumberWithString:self.amount];
+        amountDecimal = [amountDecimal decimalNumberByMultiplyingByPowerOf10:-2];
+        NSString *newAmount = [self formatCurrencyValue:amountDecimal];
         
         [textField setText:[NSString stringWithFormat:@"%@",newAmount]];
         
@@ -479,15 +481,14 @@
 }
 
 //Assists in formatting the amount.
--(NSString*)formatCurrencyValue:(double)value
+-(NSString*)formatCurrencyValue:(NSDecimalNumber *)value
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [numberFormatter setCurrencySymbol:@"$"];
     [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
-    NSNumber *c = [NSNumber numberWithFloat:value];
-    return [numberFormatter stringFromNumber:c];
+    return [numberFormatter stringFromNumber:value];
 }
 
 //This method is called whenever there is a selection change
@@ -545,15 +546,15 @@
         
         //Update the value holding the total expenditures.
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        float totalExpenses = [defaults floatForKey:@"totalExpenses"];
+        NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
         NSString *formattedString = [self.amountInput.text stringByReplacingOccurrencesOfString:@"$" withString:@""];
         formattedString = [formattedString stringByReplacingOccurrencesOfString:@"," withString:@""];
-        totalExpenses = totalExpenses - [removedAmount floatValue]; //Subtract the expense amount from the old expense.
-        totalExpenses = totalExpenses + [formattedString floatValue]; //Add the expense amount from the new expense.
-        [defaults setFloat:totalExpenses forKey:@"totalExpenses"]; //Save the new value.
+        totalExpenses = [totalExpenses decimalNumberBySubtracting:[NSDecimalNumber decimalNumberWithString:removedAmount]];
+        totalExpenses = [totalExpenses decimalNumberByAdding:[NSDecimalNumber decimalNumberWithString:formattedString]];
+        [defaults setObject:[totalExpenses stringValue] forKey:@"totalExpenses"]; //Save the new value.
         [defaults synchronize];
         
-        NSLog(@"totalExpenses = %f", totalExpenses);
+        NSLog(@"totalExpenses = %@", totalExpenses);
         
         //Saves the information to the file system.
         [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {

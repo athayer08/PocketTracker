@@ -143,7 +143,7 @@
     
     UITableViewCell *cell;
     NSString *CellIdentifier;
-    float ftotal = 0;
+    NSDecimalNumber *ftotal = [NSDecimalNumber zero];
     //first cell in table view is the total Spending Plan cell
     if(indexPath.section == 0 && indexPath.row == 0) {
         CellIdentifier = @"Total Cell";
@@ -161,19 +161,12 @@
             NSString *temp = [spendingplan.amount stringByReplacingOccurrencesOfString:@"$" withString:@""];
             temp = [temp stringByReplacingOccurrencesOfString:@"," withString:@""];
             NSLog(@"temp = %@", temp);
-            double entry = [temp doubleValue];
-            NSLog(@"temp floatvalue = %f", [temp floatValue]);
-            NSLog(@"entry = %f", entry);
-            NSLog(@"ftotal = %f", ftotal);
-            ftotal = ftotal + entry;
-            NSLog(@"total = %f", ftotal);
+            NSDecimalNumber *entry = [NSDecimalNumber decimalNumberWithString:temp];
+            ftotal = [ftotal decimalNumberByAdding:entry];
         }
         
-        
-        NSString *total = [[NSNumber numberWithFloat:ftotal] stringValue];
-       
         //update the total cell with the sum of all entries
-        NSString *formattedTotal= [self formatCurrencyValue:([total doubleValue])];
+        NSString *formattedTotal= [self formatCurrencyValue:ftotal];
         cell.detailTextLabel.text = formattedTotal;
 
     } else {
@@ -201,15 +194,14 @@
 }
 
 //format amount with correct decimal places and $ sign
--(NSString*)formatCurrencyValue:(double)value
+-(NSString*)formatCurrencyValue:(NSDecimalNumber *)value
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [numberFormatter setCurrencySymbol:@"$"];
     [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
-    NSNumber *c = [NSNumber numberWithFloat:value];
-    return [numberFormatter stringFromNumber:c];
+    return [numberFormatter stringFromNumber:value];
 }
 
 

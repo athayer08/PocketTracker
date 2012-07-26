@@ -434,7 +434,9 @@ titleForRow:(NSInteger)row forComponent:(NSInteger)component
         }
         
         NSLog(@"new string = %@", self.amount);
-        NSString *newAmount = [self formatCurrencyValue:([self.amount doubleValue]/100)];
+        NSDecimalNumber *amountDecimal = [NSDecimalNumber decimalNumberWithString:self.amount];
+        amountDecimal = [amountDecimal decimalNumberByMultiplyingByPowerOf10:-2];
+        NSString *newAmount = [self formatCurrencyValue:amountDecimal];
         
         [textField setText:[NSString stringWithFormat:@"%@",newAmount]];
         
@@ -443,15 +445,14 @@ titleForRow:(NSInteger)row forComponent:(NSInteger)component
     return YES;
 }
 
--(NSString*)formatCurrencyValue:(double)value
+-(NSString*)formatCurrencyValue:(NSDecimalNumber *)value
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [numberFormatter setCurrencySymbol:@"$"];
     [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
-    NSNumber *c = [NSNumber numberWithFloat:value];
-    return [numberFormatter stringFromNumber:c];
+    return [numberFormatter stringFromNumber:value];
 }
 
 -(void)datePickerValueChange
@@ -495,13 +496,12 @@ titleForRow:(NSInteger)row forComponent:(NSInteger)component
         expense.method = [self.paymentMethods objectAtIndex:row1];
         
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        float totalExpenses = [defaults floatForKey:@"totalExpenses"];
+        NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
         NSString *formattedString = [self.amountInput.text stringByReplacingOccurrencesOfString:@"$" withString:@""];
         formattedString = [formattedString stringByReplacingOccurrencesOfString:@"," withString:@""];
-        totalExpenses = totalExpenses + [formattedString floatValue];
-        [defaults setFloat:totalExpenses forKey:@"totalExpenses"];
+        totalExpenses = [totalExpenses decimalNumberByAdding:[NSDecimalNumber decimalNumberWithString:formattedString]];
+        [defaults setObject:[totalExpenses stringValue] forKey:@"totalExpenses"];
         
-        NSLog(@"totalExpenses = %f", totalExpenses);
         [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
             if (success){
                 [self.topContainer removeFromSuperview];

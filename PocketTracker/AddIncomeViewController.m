@@ -272,8 +272,9 @@
         }
         NSLog(@"new string = %@", self.amount);
         //format the string to a currancy format
-        NSString *newAmount = [self formatCurrencyValue:([self.amount doubleValue]/100)];
-        NSLog(@"new string = %@", newAmount);
+        NSDecimalNumber *amountDecimal = [NSDecimalNumber decimalNumberWithString:self.amount];
+        amountDecimal = [amountDecimal decimalNumberByMultiplyingByPowerOf10:-2];
+        NSString *newAmount = [self formatCurrencyValue:amountDecimal];
         
         [textField setText:[NSString stringWithFormat:@"%@",newAmount]];
         
@@ -284,15 +285,14 @@
 }
 
 //format string to inlcude proper decimal places and dollar sign
--(NSString*)formatCurrencyValue:(double)value
+-(NSString*)formatCurrencyValue:(NSDecimalNumber *)value
 {
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
     [numberFormatter setCurrencySymbol:@"$"];
     [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
-    NSNumber *c = [NSNumber numberWithFloat:value];
-    return [numberFormatter stringFromNumber:c];
+    return [numberFormatter stringFromNumber:value];
 }
 
 
