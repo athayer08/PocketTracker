@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CustomCategories.h"
 
-@interface CustomCategoriesViewController : UITableViewController
+@interface CustomCategoriesViewController : UITableViewController <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addCategoryButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editCategoriesButton;
 

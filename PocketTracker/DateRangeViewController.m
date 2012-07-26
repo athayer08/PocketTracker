@@ -194,66 +194,84 @@
 }
 
 - (IBAction)doDone:(id)sender {
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    NSDate *newStartDate = self.startPicker.date;
-    NSDate *newEndDate = self.endPicker.date;
-    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM/dd/YYYY"];
     
-    NSLog(@"New Start Date: %@", [dateFormatter stringFromDate:newStartDate]);
-    NSLog(@"New End Date: %@", [dateFormatter stringFromDate:newEndDate]);
+    NSMutableString *alertMessage = [[NSMutableString alloc] init];
+    [alertMessage appendString:@"Income and Expenses prior to "];
+    [alertMessage appendString:[dateFormatter stringFromDate:self.startPicker.date]];
+    [alertMessage appendString:@" and after "];
+    [alertMessage appendString:[dateFormatter stringFromDate:self.endPicker.date]];
+    [alertMessage appendString:@" will be deleted."];
     
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Expenses"];
-    request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
-    request.predicate = [NSPredicate predicateWithFormat:@"(date < %@) OR (date > %@)", newStartDate, newEndDate];
     
-    self.fetchedExpenses = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.document.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-    
-    NSFetchRequest *requestBudget = [NSFetchRequest fetchRequestWithEntityName:@"SpendingPlan"];
-    requestBudget.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
-    requestBudget.predicate = [NSPredicate predicateWithFormat:@"(date < %@) OR (date > %@)", newStartDate, newEndDate];
-    
-    self.fetchedBudget = [[NSFetchedResultsController alloc] initWithFetchRequest:requestBudget managedObjectContext:self.document.managedObjectContext sectionNameKeyPath:nil cacheName:nil] ;
-    
-    NSError *error1;
-    NSError *error2;
-    [self.fetchedExpenses performFetch:&error1];
-    [self.fetchedBudget performFetch:&error2];
-    
-    for (SpendingPlan *sPlan in self.fetchedBudget.fetchedObjects)
-    {
-        NSLog(@"Deleting Plan: %@", sPlan.amount);
-        [self.document.managedObjectContext deleteObject:sPlan];
-    }
-    
-    NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
-    for (Expenses *expense in self.fetchedExpenses.fetchedObjects)
-    {
-        NSLog(@"Deleting Expense: %@", expense.amount);
-        
-        NSString *formattedString = [expense.amount stringByReplacingOccurrencesOfString:@"$" withString:@""];
-        formattedString = [formattedString stringByReplacingOccurrencesOfString:@"," withString:@""];
-        totalExpenses = [totalExpenses decimalNumberBySubtracting:[NSDecimalNumber decimalNumberWithString:formattedString]];
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"CredAbility: Pocket Tracker" message:alertMessage delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [alertView setTag:0];
+    [alertView show];
+}
 
-        [self.document.managedObjectContext deleteObject:expense];
-    }
-    
-    [defaults setObject:[totalExpenses stringValue] forKey:@"totalExpenses"];
-    [defaults setObject:self.startPicker.date forKey:@"startDate"];
-    [defaults setObject:self.endPicker.date forKey:@"endDate"];
-    [defaults synchronize];
-    
-    [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
-        if (success){
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-            UINavigationController *navController = [storyboard instantiateViewControllerWithIdentifier:@"Navigation"];
-            [navController popToRootViewControllerAnimated:YES];
-        } else {
-            NSLog(@"couldn't save document at %@", self.document.fileURL);
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1 && [alertView tag] == 0) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        NSDate *newStartDate = self.startPicker.date;
+        NSDate *newEndDate = self.endPicker.date;
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MM/dd/YYYY"];
+        
+        NSLog(@"New Start Date: %@", [dateFormatter stringFromDate:newStartDate]);
+        NSLog(@"New End Date: %@", [dateFormatter stringFromDate:newEndDate]);
+        
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Expenses"];
+        request.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+        request.predicate = [NSPredicate predicateWithFormat:@"(date < %@) OR (date > %@)", newStartDate, newEndDate];
+        
+        self.fetchedExpenses = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:self.document.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+        
+        NSFetchRequest *requestBudget = [NSFetchRequest fetchRequestWithEntityName:@"SpendingPlan"];
+        requestBudget.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];
+        requestBudget.predicate = [NSPredicate predicateWithFormat:@"(date < %@) OR (date > %@)", newStartDate, newEndDate];
+        
+        self.fetchedBudget = [[NSFetchedResultsController alloc] initWithFetchRequest:requestBudget managedObjectContext:self.document.managedObjectContext sectionNameKeyPath:nil cacheName:nil] ;
+        
+        NSError *error1;
+        NSError *error2;
+        [self.fetchedExpenses performFetch:&error1];
+        [self.fetchedBudget performFetch:&error2];
+        
+        for (SpendingPlan *sPlan in self.fetchedBudget.fetchedObjects)
+        {
+            NSLog(@"Deleting Plan: %@", sPlan.amount);
+            [self.document.managedObjectContext deleteObject:sPlan];
         }
-    }];
+        
+        NSDecimalNumber *totalExpenses = [NSDecimalNumber decimalNumberWithString:[defaults objectForKey:@"totalExpenses"]];
+        for (Expenses *expense in self.fetchedExpenses.fetchedObjects)
+        {
+            NSLog(@"Deleting Expense: %@", expense.amount);
+            
+            NSString *formattedString = [expense.amount stringByReplacingOccurrencesOfString:@"$" withString:@""];
+            formattedString = [formattedString stringByReplacingOccurrencesOfString:@"," withString:@""];
+            totalExpenses = [totalExpenses decimalNumberBySubtracting:[NSDecimalNumber decimalNumberWithString:formattedString]];
+            
+            [self.document.managedObjectContext deleteObject:expense];
+        }
+        
+        [defaults setObject:[totalExpenses stringValue] forKey:@"totalExpenses"];
+        [defaults setObject:self.startPicker.date forKey:@"startDate"];
+        [defaults setObject:self.endPicker.date forKey:@"endDate"];
+        [defaults synchronize];
+        
+        [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
+            if (success){
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"CredAbility: Pocket Tracker" message:@"Date Range has been updated." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                [alertView show];
+            } else {
+                NSLog(@"couldn't save document at %@", self.document.fileURL);
+            }
+        }];
+    }
 }
 @end

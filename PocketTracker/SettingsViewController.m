@@ -254,7 +254,7 @@
     if (indexPath.section == 0) {
         [self performSegueWithIdentifier:@"View Tutorial" sender:self];
     } else if (indexPath.section == 1) {
-        UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"Credability: Pocket Tracker" message:@"Delete all Expense and Spending Plan data?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+        UIAlertView *alertView = [[UIAlertView alloc ] initWithTitle:@"CredAbility: Pocket Tracker" message:@"Delete all Expense and Spending Plan data?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
         alertView.delegate = self;
         [alertView show];
     } else if (indexPath.section == 2) {

@@ -10,7 +10,7 @@
 #import "SpendingPlan.h"
 #import "Expenses.h"
 
-@interface DateRangeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface DateRangeViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneButton;

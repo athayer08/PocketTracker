@@ -58,10 +58,7 @@
         
         //Calculate the end date
         NSDate *endDate = [defaults objectForKey:@"endDate"];
-        //NSTimeInterval test = -2 * 24 * 60 * 60;
-        //NSTimeInterval test1 = -1 * 24 * 60 * 60;
-        //NSDate *startDate = [[NSDate date] dateByAddingTimeInterval:test];
-        //NSDate *endDate = [[NSDate date] dateByAddingTimeInterval:test1];
+
         NSInteger comps = (NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit);
         
         NSCalendar *calendar = [NSCalendar currentCalendar];

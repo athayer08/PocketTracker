@@ -490,7 +490,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmB-dr-oxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Add Expense Controller" id="iDs-DX-Lba" customClass="AddExpenseViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GxB-GJ-9xi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gU0-vp-RmF">
@@ -628,7 +628,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdD-om-l9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="29V-Kc-dC3" customClass="SummaryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XXM-pB-2we">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -643,7 +643,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOc-uW-knx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Expense Controller" id="LYM-Pz-Wk6" customClass="ExpensesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J9l-wC-Xyw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="XI8-Cz-LiB">
@@ -721,7 +721,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V84-QC-0e3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aoN-4r-q1q" customClass="SpendingPlanViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CEV-wA-mj6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ptk-lh-rid">
@@ -811,7 +811,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hbf-yk-8Jv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="5ic-4f-tvb" customClass="AddIncomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRY-lp-jUy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eev-4t-jqQ">
@@ -891,11 +891,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vI2-2Y-643" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="GWQ-ts-9YB" customClass="SettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LeQ-av-lNs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="tUc-Hn-kjM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -926,25 +926,40 @@
                     <navigationItem key="navigationItem" title="Settings" id="Old-BD-4ax"/>
                     <connections>
                         <outlet property="tView" destination="tUc-Hn-kjM" id="MWZ-Ua-pOS"/>
-                        <segue destination="8tH-Kf-VPH" kind="push" identifier="View Tutorial" id="hTY-7c-9uG"/>
                         <segue destination="RjA-rg-xW3" kind="push" identifier="Custom Categories" id="1vT-5B-ovr"/>
                         <segue destination="LmX-cg-pJs" kind="push" identifier="Date Range" id="qad-in-hDX"/>
+                        <segue destination="gre-8t-oPh" kind="modal" identifier="View Tutorial" id="BjA-71-P7e"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-1203" y="1786"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zdq-8c-8T8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lb5-Ag-Ibj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="gre-8t-oPh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jgc-kv-XZZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8tH-Kf-VPH" kind="relationship" relationship="rootViewController" id="oWt-ST-Aua"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-427" y="1752"/>
+        </scene>
         <!--View Controller - How to Start-->
         <scene sceneID="jXv-7x-yJR">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dn3-Ws-lvm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="8tH-Kf-VPH" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="8tH-Kf-VPH" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hRR-6L-Zm4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="g2o-xA-q8e">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Skip Tutorial" id="DGh-la-ryS">
@@ -961,7 +976,7 @@
                                 </items>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="9kX-IE-B58">
-                                <rect key="frame" x="20" y="144" width="280" height="223"/>
+                                <rect key="frame" x="20" y="129" width="280" height="223"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">The CredAbility Pocket Tracker allows you to track your spending for a 30 day period to determine where your spending leaks currently reside. Each time you make a purchase, record the amount by selecting the appropriate category and enter the dollar amount spent. At the end of the tracking period, utilize the pie chart to quickly see where you are spending the most money. Did you spend more or less than you planned? Are there any spending habits you want to change? The pocket tracker is a simple tool that will help you analyze where your money is going and assist you in staying on track with your spending.</string>
@@ -970,16 +985,16 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="Welcome.tiff" id="AGZ-E5-vQU">
-                                <rect key="frame" x="0.0" y="-30" width="320" height="266"/>
+                                <rect key="frame" x="27" y="20" width="267" height="86"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="How to Start" id="Lz1-xp-Wtl"/>
+                    <navigationItem key="navigationItem" title="How to Start" id="qYx-bm-319"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-294" y="1786"/>
+            <point key="canvasLocation" x="46" y="1762"/>
         </scene>
         <!--View Controller - Pocket Tracker Summary-->
         <scene sceneID="0g5-6W-d4A">
@@ -987,11 +1002,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZ1-hM-yib" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="sIP-3R-qud" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LfV-Ul-f29">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="35t-Pb-2wT">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Skip Tutorial" id="dOc-Ay-nmM">
@@ -1008,7 +1023,7 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Summary.tiff" id="3tH-ry-Epo">
-                                <rect key="frame" x="64" y="0.0" width="192" height="283"/>
+                                <rect key="frame" x="64" y="0.0" width="192" height="239"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="FlT-JH-psm">
@@ -1026,7 +1041,7 @@
                     <navigationItem key="navigationItem" title="Pocket Tracker Summary" id="ZpP-p1-DIZ"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="98" y="1786"/>
+            <point key="canvasLocation" x="438" y="1762"/>
         </scene>
         <!--View Controller - View the Spending Plan-->
         <scene sceneID="Dk8-PF-zgz">
@@ -1034,11 +1049,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Weg-4J-dIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="mTH-19-xPf" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ds-OE-tPE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="49W-6g-aTd">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Skip Tutorial" id="o1Q-w6-RpO">
@@ -1055,7 +1070,7 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Spending Plan.tiff" id="C4i-LY-2Jw">
-                                <rect key="frame" x="54" y="25" width="213" height="251"/>
+                                <rect key="frame" x="54" y="25" width="213" height="207"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="TVT-Of-TSb">
@@ -1073,7 +1088,7 @@
                     <navigationItem key="navigationItem" title="View the Spending Plan" id="HOt-GC-USw"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="510" y="1786"/>
+            <point key="canvasLocation" x="850" y="1762"/>
         </scene>
         <!--View Controller - Adding Income-->
         <scene sceneID="UQG-OK-cbq">
@@ -1081,11 +1096,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wo9-VZ-txG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="IB5-8B-ZFz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ko-AD-z2H">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cRB-Lz-gSa">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Skip Tutorial" id="b9m-jR-eGX">
@@ -1102,7 +1117,7 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Add Income.tiff" id="aKJ-K4-AtS">
-                                <rect key="frame" x="40" y="20" width="241" height="202"/>
+                                <rect key="frame" x="40" y="20" width="241" height="158"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="L5p-BE-rVX">
@@ -1120,7 +1135,7 @@
                     <navigationItem key="navigationItem" title="Adding Income" id="Gcr-KX-ATP"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="924" y="1786"/>
+            <point key="canvasLocation" x="1264" y="1762"/>
         </scene>
         <!--View Controller - Adding an Expense-->
         <scene sceneID="TLR-0F-Ic1">
@@ -1128,11 +1143,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPM-do-Pwl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Bh8-ht-Kwy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="faG-ew-18m">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="kvk-jE-CUo">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Skip Tutorial" id="KDa-1F-G14">
@@ -1149,7 +1164,7 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="AddExpense.tiff" id="saN-rT-BwM">
-                                <rect key="frame" x="0.0" y="7" width="320" height="233"/>
+                                <rect key="frame" x="0.0" y="7" width="320" height="189"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="nQT-9g-JQu">
@@ -1185,7 +1200,7 @@
                     <navigationItem key="navigationItem" title="Adding an Expense" id="8xQ-su-UEY"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1342" y="1786"/>
+            <point key="canvasLocation" x="1682" y="1762"/>
         </scene>
         <!--View Controller - Viewing Expenses-->
         <scene sceneID="8VT-Ls-gbM">
@@ -1193,11 +1208,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a3x-Mg-VFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="qXo-7F-SzA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PgB-aQ-bLU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1qk-Iy-IZ8">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Skip Tutorial" id="kpJ-OS-Dnr">
@@ -1214,7 +1229,7 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Expenses.tiff" id="gMR-rP-neF">
-                                <rect key="frame" x="0.0" y="20" width="320" height="280"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="236"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="zhs-aA-Pas">
@@ -1232,7 +1247,7 @@
                     <navigationItem key="navigationItem" title="Viewing Expenses" id="9kV-U6-OkO"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1770" y="1786"/>
+            <point key="canvasLocation" x="2110" y="1762"/>
         </scene>
         <!--View Controller - Settings-->
         <scene sceneID="kbp-Un-GGn">
@@ -1240,11 +1255,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDK-XM-Pi0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="XTP-tX-3fp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mk3-X7-bBR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="qgW-s0-3PQ">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="255" style="plain" systemItem="fixedSpace" id="3EM-ll-h1A"/>
@@ -1256,7 +1271,7 @@
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Settings.tiff" id="onR-B2-Zio">
-                                <rect key="frame" x="43" y="20" width="235" height="226"/>
+                                <rect key="frame" x="43" y="20" width="235" height="182"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="Yts-Le-hgo">
@@ -1274,7 +1289,7 @@
                     <navigationItem key="navigationItem" title="Settings" id="tWe-YW-zpd"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2180" y="1786"/>
+            <point key="canvasLocation" x="2520" y="1762"/>
         </scene>
         <!--Custom Categories View Controller - Custom Categories-->
         <scene sceneID="Mpp-sU-MTL">
@@ -1282,7 +1297,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fby-Hs-VtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="RjA-rg-xW3" customClass="CustomCategoriesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="36o-ph-eOS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -1315,12 +1330,12 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qYP-9l-lL1">
                             <connections>
                                 <action selector="addCategory:" destination="RjA-rg-xW3" id="e6K-VY-325"/>
-                                <segue destination="YmI-jI-UfD" kind="modal" id="7RI-NV-VP0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addCategoryButton" destination="qYP-9l-lL1" id="Axo-xJ-d1j"/>
+                        <segue destination="YmI-jI-UfD" kind="modal" identifier="Add Category" id="S7a-Hc-raw"/>
                     </connections>
                 </tableViewController>
             </objects>
@@ -1332,11 +1347,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0nx-6e-OSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="LmX-cg-pJs" customClass="DateRangeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Uv-l2-LGP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="on5-Oi-TVs">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="323"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -1361,7 +1376,7 @@
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="b1D-ja-jUq">
-                                <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="323" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem width="252" style="plain" systemItem="fixedSpace" id="x3a-4y-DTu"/>
@@ -1391,7 +1406,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caC-E9-bRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="YmI-jI-UfD" customClass="AddCategoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qwk-Gt-eRs">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="a8E-sr-fwN">
@@ -1453,12 +1468,98 @@
         <image name="Welcome.tiff" width="315" height="136"/>
         <image name="WelcomeScreen.tiff" width="303" height="134"/>
     </resources>
+    <classes>
+        <class className="AddCategoryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCategoryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doCancelButton:"/>
+                <relationship kind="action" name="doDoneButton:"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="AddExpenseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddExpenseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doDoneButton"/>
+                <relationship kind="outlet" name="doneAddExpense" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="AddIncomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddIncomeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButton"/>
+                <relationship kind="action" name="doneButton"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneAddIncome" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="CustomCategoriesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomCategoriesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addCategory:"/>
+                <relationship kind="action" name="editCategories:"/>
+                <relationship kind="outlet" name="addCategoryButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editCategoriesButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="DateRangeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DateRangeViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doDone:"/>
+                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="EditExpenseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditExpenseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doCancelButton"/>
+                <relationship kind="action" name="doDoneButton"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doneAddExpense" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ExpensesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ExpensesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="InitialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InitialViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doContinue"/>
+                <relationship kind="outlet" name="continueButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SpendingPlanViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpendingPlanViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="SummaryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vh2-IX-NFR"/>
+        <segue reference="pDE-KW-XrB"/>
     </inferredMetricsTieBreakers>
 </document>

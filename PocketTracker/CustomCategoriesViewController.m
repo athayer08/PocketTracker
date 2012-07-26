@@ -152,7 +152,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 - (IBAction)addCategory:(id)sender {
-    
+    if ([resultsController.fetchedObjects count] < 10) {
+        [self performSegueWithIdentifier:@"Add Category" sender:self];
+    } else {
+        UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"CredAbility: Pocket Tracker" message:@"A maximum of 10 custom categories are allowed." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alerView show];
+    }
 }
 
 - (IBAction)editCategories:(id)sender {
